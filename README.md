@@ -3,6 +3,7 @@
 1) in terminal, type =>  git add -A
 2) in terminal, type  => git commit -m "discription of commit in qoutes"
 3) in terminal, type => git push 
+<<<<<<< HEAD
 ## how to install projects using opspark tool 
 1) in terminal, type => code ~/.bashrc
 2)on line 4 type   export CHE_PROJECTS_ROOTS=/workspace
@@ -19,3 +20,5 @@
 2) select bootcamp session 
 3) select project that you are testin for 
 4)os submit 
+=======
+>>>>>>> origin/main
