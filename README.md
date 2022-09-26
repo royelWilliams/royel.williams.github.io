@@ -22,3 +22,7 @@
 4)os submit 
 =======
 >>>>>>> origin/main
+## how to run os test / os submit 
+1)in teor os submit 
+2) select your bootcamp session 
+3) select project 
