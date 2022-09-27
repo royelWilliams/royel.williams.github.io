@@ -21,13 +21,16 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-  
-    
-    
+    //need to make a var statement that equals a empty string 
+   var result = ""
+  //use your input to be in a reverse loop 
+  for (var i= input.length-1; i >= 0; --i)
+    result += input[i];                      
+    return result;
     
     // YOUR CODE GOES ABOVE HERE //
 }
-
+console.log(reverseString("hello"));
 
 
 

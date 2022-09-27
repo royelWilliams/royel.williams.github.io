@@ -61,12 +61,17 @@ return up;
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-// using the replace method string using the replace method .replace then using the  toDashCase method then RETURN the value 
-var sign = "string";
-var replace = sign.replace("string","Happy Days");
- return sign.toDashCase();
-
-
+// first make a string that can be manipulated like the Hello world string
+var string = "Hello World beautiful day";
+  //console.log(string);
+//use the split method to split the words using dashes 
+var run = string.split(" ");
+  console.log(run);
+//use the join method to turn the array back into a string 
+var stop = run.join("-");
+console.log(stop);
+var go = stop.toLowerCase();
+console.log(go);
     // YOUR CODE ABOVE HERE //
 }
 
@@ -84,9 +89,11 @@ var replace = sign.replace("string","Happy Days");
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+// create a function with an empty string as a parameter  and a character 
+ 
+// create a if statement 
 
-    
-
+if()
     // YOUR CODE ABOVE HERE //
 }
 
@@ -183,7 +190,9 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+//using a if else statement 
+// if first string is lower in alphabetical order then RETURN 1
+//else if the second string is lower in alphabetical order 
 
 
 
