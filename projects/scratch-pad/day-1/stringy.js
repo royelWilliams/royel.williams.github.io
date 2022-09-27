@@ -87,15 +87,24 @@ console.log(go);
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
-function beginsWith(string, char) {
+function beginsWith(string, char){
     // YOUR CODE BELOW HERE //
-// create a function with an empty string as a parameter  and a character 
- 
-// create a if statement 
-
-if()
-    // YOUR CODE ABOVE HERE //
+    //using the lowercase you want to make sure all of the characters in the given string are the same 
+var now = string.toLowerCase();
+//console.log(now);
+// then makke an if  else statement to show that the lowercase string's first letter does or dosent equal the character 
+if (now[0] === char){
+    console.log(now[0]=== char)
+  return true 
 }
+  else {
+      return false 
+  }
+}
+// throw in a example and check if my function is working 
+console.log(beginsWith('Hello','h'));
+    // YOUR CODE ABOVE HERE //
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -111,11 +120,17 @@ if()
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
-
-    // YOUR CODE ABOVE HERE //
+// make all of the characters in the same case
+var later = string.toLowerCase();
+// find the last character in the string, use it in if statement to prove that the last letter does equal the character given 
+if (later.length- 1 === char){
+    return true
 }
+else{ return false 
+}
+}
+console.log(endsWith('Hello','o'));
+    // YOUR CODE ABOVE HERE //
 
 /**
  * Given two input Strings, return the Strings concatenated into one.
@@ -124,6 +139,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // by returning the two strings being + together using the sign 
+return stringOne. concat(stringTwo);
 
 
 
@@ -143,8 +160,15 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
+    // add the string example 
+    var string = ["StringOne", "stringTwo"];
+    
+// using the .split method and join turn the strings into an array 
+ var two = string.length;
+//  use the .length method to find the longest 
 
-
+//use the .join to turn array back into string 
+var two = string.join;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -159,8 +183,8 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+// you have to RETURN the longest string that is in the function so return  
+// set a avariable to the longest word and split the string into a array
 
     // YOUR CODE ABOVE HERE //
 }
