@@ -11,21 +11,23 @@
  * using console.log().
  */
 function printArrayValues(array) {
-  // YOUR CODE BELOW HERE //
+  //YOUR CODE BELOW HERE //
+  var arr = [4, 5, 6, 7, 8];
+   var i = 0
+   while(i<arr.length){
+    console.log(arr[i]);
+   }
   
-  
-  
-  
-  // YOUR CODE ABOVE HERE //
 }
+  printArrauValues()
+  // YOUR CODE ABOVE HERE //
+
 
 /** 
  * Given an input Array, loop backwards over the Array and print its values 
  * using console.log().
  */
-function printArrayValuesInReverse(array) {
-  // YOUR CODE BELOW HERE //
-  
+function printArrayValuesInReverse(array){
   
   
   
@@ -37,9 +39,15 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  //create output array 
+  var keys =[]
+  //iterate through object
+  for(var key in object){
+//push the current key into keys array  
+keys.push(key);
+  }
+  //return object array
+  return keys;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -50,10 +58,14 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  // create a output array 
+  var keys = [];
+  // iterate through object 
+  for(var key in object){
+console.log(key);
+console.log(object[key]);
+}
+ return keys;
   // YOUR CODE ABOVE HERE //
 }
 
