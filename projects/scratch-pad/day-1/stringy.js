@@ -236,8 +236,8 @@ if( stringOne.localeCompare(stringTwo)) {
 // console.log(even);
 
 
-  }
-  sortAscending("happy", "had");
+  //}
+ // sortAscending("happy", "had");
     // YOUR CODE ABOVE HERE //
 
 
@@ -267,6 +267,19 @@ function sortDescending(stringOne, stringTwo) {
 //   else {
 //       return 0;
 //   }
+if( stringOne.localeCompare(stringTwo)) {
+  //console.log(stringOne.localeCompare(stringTwo));
+    return 1;
+}
+// if statement for lower that will return -1
+else if (stringTwo.localeCompare(stringOne)){
+  //console.log(stringTwo.localCompare(stringOne));
+    return -1;
+}
+// if statement for == or default
+else {
+    return 0;
+}
   }
 }
 //     // YOUR CODE ABOVE HERE //
