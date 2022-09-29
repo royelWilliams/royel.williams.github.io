@@ -33,13 +33,18 @@ else{
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    if(num < base){
+    // return a function with a parameter to be tested against the parameter of base
+    return function(number){
+    if(number < base){
+        // if number is less than base then report true else return false 
         return true;
     }
     else {return false;
     }
-       // YOUR CODE ABOVE HERE //
 }
+}
+       // YOUR CODE ABOVE HERE //
+
 
 /** 
  * Given a startsWith character, which will be a single character, return a 
@@ -48,21 +53,18 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-     //using the lowercase you want to make sure all of the characters in the given string are the same 
-var now = string.toLowerCase();
-//console.log(now,"now");
-//now by using the new variable now(that is all of the characters in the same form) create a if statement that is explaining true if a match false if not 
-if (now[0] !== char.toLowerCase()){
-  console.log(now[0], char, "happy");
-return false;
+   var wow = startsWith.toLowerCase();
+    //returning a function 
+     return function(string){
+        return(wow === string[0]);
+
+// I have to change the case of the character so it can be compared to the starts with function 
+//then use a if statement to prove if the characters are the same return true else return false 
+     };
 }
-//else {
-    return true;
-    
-    
-    
+
     // YOUR CODE ABOVE HERE //
-}
+
 
 /** 
  * Given a endsWith character, which will be a single character, return a 
