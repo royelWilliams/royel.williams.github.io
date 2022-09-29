@@ -14,12 +14,26 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    //we have to make a function that proves the same thing as typeof because type of does not work well with arrays 
+    //
+    // check if arr is array
+     //var result = Array.isArray();
+
+    if(Array.isArray(value)) { 
+
+        //console.log(`[${arr}] true.`);
+        return true;
+    }
+    else {
+        //console.log(`${arr} false.`);
+        return false;
+    }
+
+
+
+//const array = [1, 2, 3];
 }
+     // YOUR CODE ABOVE HERE //
 
 /** 
  * Given an input value, return true if the value is an Object intended as a 
@@ -31,9 +45,29 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // return a coder that is strickly equal to object, but not array,null,
+    if( value instanceof Date){
+        return false;
+    }
+    else if (value === null ){
+        return false;
+    }
+    else if(Array.isArray(value)){
+        return false;
+    }
+    else if (typeof(value) === "number"){
+        return false;
+    }
+    else if(typeof(value)=== "string"){
+        return false;
+    }
+    else if(typeof(value)=== "boolean"){
+        return false;}
+     
+    else{
+        console.log(value);
+        return true;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -46,9 +80,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // isArray(value) || isObject(value) ;
+    if(isArray(value) || isObject(value)){
+        return true;
+    }
+    else {
+        return false;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -74,12 +112,37 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    if( value instanceof Date){
+        return "date";
+    }
+    else if (value === null ){
+        return "null";
+    }
+    else if(Array.isArray(value)){
+        return "array";
+    }
+    else if (typeof(value) === "number"){
+        return "number";
+    }
+    else if(typeof(value)=== "string"){
+        return "string";
+    }
+    else if(typeof(value)=== "boolean"){
+        return "boolean";}
+        else if(typeof(value)=== "undefined"){
+            return "undefined";}
+            else if(typeof(value)=== "function"){
+                return "function";}
+    else{
+        return "object";
+    }
+    }
     
     
-    
+
     
     // YOUR CODE ABOVE HERE //
-}
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

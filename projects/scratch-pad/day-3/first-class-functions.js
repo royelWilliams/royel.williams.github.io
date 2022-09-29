@@ -13,25 +13,32 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+   // var num = 12;
+ //if(num > base){
+   // return true;
+ return function(num){
+    if(num >base ){
+        return true;
+    }
+else{
+    return false;
 }
-
-/** 
- * Given an input base to test against, which could be a String or Number, 
+ } 
+} 
+    // createGreaterThanFilter(23);
+    // YOUR CODE ABOVE HERE //
+ /* Given an input base to test against, which could be a String or Number, 
  * return a Function that tests whether a given value is less than the 
  * base.
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    if(num < base){
+        return true;
+    }
+    else {return false;
+    }
+       // YOUR CODE ABOVE HERE //
 }
 
 /** 
@@ -41,7 +48,16 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+     //using the lowercase you want to make sure all of the characters in the given string are the same 
+var now = string.toLowerCase();
+//console.log(now,"now");
+//now by using the new variable now(that is all of the characters in the same form) create a if statement that is explaining true if a match false if not 
+if (now[0] !== char.toLowerCase()){
+  console.log(now[0], char, "happy");
+return false;
+}
+//else {
+    return true;
     
     
     
