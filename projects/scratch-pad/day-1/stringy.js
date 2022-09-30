@@ -215,12 +215,12 @@ function sortAscending(stringOne, stringTwo) {
 // they should be returning the values 1, -1 and 0
 if( stringOne.localeCompare(stringTwo)) {
     //console.log(stringOne.localeCompare(stringTwo));
-      return 1;
-  }
+      return -1;}
+      
   // if statement for lower that will return -1
   else if (stringTwo.localeCompare(stringOne)){
     //console.log(stringTwo.localCompare(stringOne));
-      return -1;
+      return 1;
   }
   // if statement for == or default
   else {

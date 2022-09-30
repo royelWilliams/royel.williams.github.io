@@ -32,11 +32,15 @@ function printArrayValues(array) {
  * using console.log().
  */
 function printArrayValuesInReverse(array){
-  for(var i = array.length; i >= 0;i--){
-    console.log(i);
-  }
+
+   for(var i = array.length -1 ; i >= 0;i--){
+    //console.log(i);
+      console.log(array[i]);
+    }
+   
+  
 }
-  printArrayValuesInReverse("tomorrow");
+  printArrayValuesInReverse(["tomorrow", "today", "yesterday"]);
   // YOUR CODE ABOVE HERE //
 
 
@@ -119,12 +123,12 @@ for(var key in object){
   console.log (key);
   console.log(object[key]);
 }
-var array = [];
+// var array = [];
 // loop over the array backwards 
-for(var i = array.length; i >= 0;i--){
-  console.log(i);}
+for(var i = object.length; i >= 0;i--){
+  console.log(object[i]);}
 }
-printObjectValuesInReverse();
+//printObjectValuesInReverse();
   // YOUR CODE ABOVE HERE //
 
 
