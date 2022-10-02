@@ -36,12 +36,27 @@
 // YOUR CODE GOES BELOW HERE //
 // factory function that is returning an object 
 function makeContact(id, nameFirst, nameLast) {
-var obj = {
-    obj.id = "id";
-    obj.nameFirst = "nameFrist";
-    obj.nameLast = "nameLast";
-}
-return obj;
+// var obj = {
+//     obj.id = "id";
+//     obj.nameFirst = "nameFrist";
+//     obj.nameLast = "nameLast";
+// }
+// return obj;
+var contacts = []; 
+         return    {
+         id: id,
+         FirsName: nameFirst,
+         LastName: nameLast
+         };
+
+         } 
+         function makeContactList(id, nameFirst, nameLast) {
+         var contacts = [];
+         return { 
+              id: id,
+              FirstName: nameFirst,
+               LastName: nameLast,
+
 } 
 
 function makeContactList() {
