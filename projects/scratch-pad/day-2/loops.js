@@ -119,15 +119,17 @@ function printObjectValuesInReverse(object) {
 // Push object values into an array 
 // create a for in loop and then outside of the loop create an empty array 
  //var array = [];
-for(var key in object){
-  console.log (key);
-  console.log(object[key]);
-}
+// for(var key in object){
+//   console.log (key);
+//   console.log(object[key]);
+// }
 // var array = [];
 // loop over the array backwards 
-for(var i = object.length; i >= 0;i--){
-  console.log(object[i]);}
+// for(var i = object.length; i >= 0;i--){
+//   console.log(object[i]);}
+
 }
+
 //printObjectValuesInReverse();
   // YOUR CODE ABOVE HERE //
 
