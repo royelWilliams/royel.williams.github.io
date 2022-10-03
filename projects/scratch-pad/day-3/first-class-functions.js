@@ -94,20 +94,20 @@ else {return false;}
 }
     // YOUR CODE ABOVE HERE //
 
-/* 
- * Given an Array of Strings and a Function designed to modify a String, 
+/*  Given an Array of Strings and a Function designed to modify a String, 
  * return the Array of the Strings, modified.
- * 
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     var arr = [];
-    for(var i = 0;i >strings.length;i++ ){
-    return[strings,modify];
+    for(var i = 0; i < strings.length; i++ ){
+       // modify(strings[i]);
+        console.log(modify(strings[i]));
+         arr.push(modify(strings[i]));
 }
-    
+    return arr;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -123,13 +123,20 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    var tally = 0;
+    for(var i = 0; i < strings.length; i++){
+       // test(strings[i]);
+        if(test(strings[i])){
+       tally++
+    }
 }
+console.log(strings.length,tally);
+    return strings.length === tally ;
 
+    // YOUR CODE ABOVE HERE //
+
+
+}
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {

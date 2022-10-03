@@ -69,20 +69,22 @@ function makeContactList() {
      */
     var contacts = [];
     contacts.length;
-     addcontact()
-    findContacts()
+     contacts()
+    contacts()
     removeContacts()
     function printAllContactNames(){}
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    },
-    addContact; function(contact){
+        },
+    contacts: function(contact){
         contacts.push(contact);
+    },
+    
     }
 }
+
 
 
 

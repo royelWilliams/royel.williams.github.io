@@ -40,7 +40,7 @@ function printArrayValuesInReverse(array){
    
   
 }
-  printArrayValuesInReverse(["tomorrow", "today", "yesterday"]);
+  //printArrayValuesInReverse(["tomorrow", "today", "yesterday"]);
   // YOUR CODE ABOVE HERE //
 
 
@@ -74,7 +74,7 @@ for(var key in object){
 }
 }
 
-printObjectKeys(object);
+//printObjectKeys(object);
 /** 
  * Given an input Object, return an Array containing the Object's values.
  */
@@ -118,15 +118,20 @@ function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
 // Push object values into an array 
 // create a for in loop and then outside of the loop create an empty array 
- //var array = [];
+//  var array = [];
 // for(var key in object){
 //   console.log (key);
 //   console.log(object[key]);
-// }
-// var array = [];
-// loop over the array backwards 
-// for(var i = object.length; i >= 0;i--){
-//   console.log(object[i]);}
+
+//var array = [];
+//loop over the array backwards 
+//Object.values(object);
+// this is the array  of values being passed into a loop
+for(var i = Object.values(object).length -1; i >= 0;i--){
+  
+  console.log(Object.values(object)[i])}
+
+
 
 }
 
