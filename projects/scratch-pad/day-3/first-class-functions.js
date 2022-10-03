@@ -52,15 +52,13 @@ function createLessThanFilter(base) {
  * character.
  */
 function createStartsWithFilter(startsWith) {
-    // YOUR CODE BELOW HERE //
     //I have to change the case to lower case so it even if the word is in a different case it can still be tested
- var wow = startsWith.toLowerCase();
-
-// //returning a function to test if starts with is with a given character 
+ var cool = startsWith.toLowerCase();
+// //returning a function to test if starts with is with a given character by using a if statement 
 return function(string){
 
-    var oh = string.toLowerCase();
-    if(wow === oh[0]){
+    var beans  = string.toLowerCase();
+    if(cool === beans[0]){
     return true;
 }
 else {return false;}
@@ -74,11 +72,6 @@ else {return false;}
 // }
 // else{return false;}
 
-// I have to change the case of the character so it can be compared to the starts with function 
-//then use a if statement to prove if the characters are the same return true else return false 
-    
-
-
     // YOUR CODE ABOVE HERE //
 
 
@@ -90,23 +83,18 @@ else {return false;}
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     var wow = endsWith.toLowerCase();
-
-// //returning a function to test if starts with is with a given character 
-return function(string){
-
-    var oh = string.toLowerCase();
-    if(wow === oh.length-1){
+// //returning a function to test if it ends with is with a given character 
+return function(str){
+    var my = str.toLowerCase();
+    if(wow === my[my.length -1]){ 
     return true;
 }
 else {return false;}
+} 
 }
-    
-    
-    
     // YOUR CODE ABOVE HERE //
-}
 
-/** 
+/* 
  * Given an Array of Strings and a Function designed to modify a String, 
  * return the Array of the Strings, modified.
  * 

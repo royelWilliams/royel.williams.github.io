@@ -74,6 +74,7 @@ var go = stop.toLowerCase();
 console.log(go);
 return go;
 }
+
 console.log(toDashCase("Hello World beautiful day"));
     // YOUR CODE ABOVE HERE //
 
@@ -193,7 +194,7 @@ if(stringOne.length > stringTwo.length){
     else{
     return  stringTwo;
 }
-}
+
 longest("today", "tomorrow");
 // provide a value to insert to test
 
@@ -206,26 +207,30 @@ longest("today", "tomorrow");
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
-function sortAscending(stringOne, stringTwo) {
-     // YOUR CODE BELOW HERE //
-// there should be a if statement at hand for higher
-// they should be returning the values 1, -1 and 0
+function sortAscending(stringOne, stringTwo) {   
     // YOUR CODE BELOW HERE //
-// there should be a if statement at hand for higher
+// there should be a if statement at hand for higher\
 // they should be returning the values 1, -1 and 0
-if( stringOne.localeCompare(stringTwo)) {
-    //console.log(stringOne.localeCompare(stringTwo));
-      return -1;}
-      
-  // if statement for lower that will return -1
-  else if (stringTwo.localeCompare(stringOne)){
-    //console.log(stringTwo.localCompare(stringOne));
-      return 1;
-  }
-  // if statement for == or default
-  else {
-      return 0;
-  }
+//  if(stringOne.localeCompare(stringTwo)){
+//  // if(stringOne > stringTwo){
+//     //console.log(stringOne.localeCompare(stringTwo));
+//       return 1;}
+//   // if statement for lower that will return -1
+//  else if(stringTwo.localeCompare(stringOne)){
+//     //console.log(stringTwo.localCompare(stringOne));
+//     //if(stringTwo > stringOne){
+//       return -1;}
+//    // if statement for == or default
+//   else {
+//       return 0;
+//  }
+var arr = [stringOne, stringTwo];
+arr.sort (function(a, b){
+  console.log(a.localeCompare(b))
+  return a.localeCompare(b)})
+
+}
+
 // var string1 = "apple";
 //   var string2 = "hello";
 // var compare = string1.localeCompare(string2);
