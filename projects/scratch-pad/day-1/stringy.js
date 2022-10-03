@@ -164,6 +164,7 @@ return stringOne. concat(stringTwo);
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+// use the array that was given and join it by the spaces using .join 
         var args = Array.from(arguments);
       console.log(args);
       args.join('');
