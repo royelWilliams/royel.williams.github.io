@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////////////
 var animal ={};
 animal.species = "mammal";
-animal[name] = "lion";
+animal["name"] = "Lion";
 animal.noises =[];
 console.log(animal);
 
@@ -30,10 +30,12 @@ var noises = [];
 noises.push('Roar');
 function array(){
   noises.quietNoise.push('purrr');
-noises.unshift("growl");
+noises.unshift('growl');
+noises.Array.prototype.findLastIndex('yip')
 }
-array()
-noises
+console.log(noises.length);
+console.log();
+console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
@@ -45,7 +47,9 @@ noises
  * Step 4 - Review
  *
  * 1. What are the different ways you can access properties on objects?
- *
+ *Dot property accessor: object. property.
+Square brackets property access: object['property']
+Object destructuring: const { property } = object.
  * 2. What are the different ways of accessing elements on arrays?
  *
  * *******************************************************************
@@ -63,14 +67,29 @@ noises
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//declare animals with empty array
+var animals = [];
+//push animal to animals 
+animal.push(animal["name"]);
+//create duck variable and and assign given object 
+var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }
+// create for in loop to push object property to the array 
 
 
+//console.log animals and length of animals 
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+/* making a list of friends usind an array so all of the friends information can stay together and be seperated with a ,
+This also allows more than one friend to be looked at to see its details, etc.
+*/
+var friends = [];
+function getRandom (animals){
+  
+}
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
