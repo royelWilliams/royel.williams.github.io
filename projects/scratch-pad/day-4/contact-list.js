@@ -60,8 +60,15 @@ var contacts = [];
                LastName: nameLast,
 
 
+    //should take the full name string and return contact obj
+    // loop over the contacts array 
+    //use a if statement and the splice statement
+    //loop over the contact array use a if statement
+
+}
+
 } 
-         }
+         
 
 function makeContactList() {
     /*
@@ -83,6 +90,28 @@ function makeContactList() {
     },
     
     }
+    findContacts: function(fullName){
+        for(var i =0; i < contacts.length; i++){
+            if(contacts[i].nameFirst + " " + contacts[i].nameLast === fullName){
+                return contacts[i];
+            }
+        }
+        return undefined;
+    },
+removeContact: function(contact){
+    //loop over arrays
+    for(var i = 0; i< contact.length; i++){
+        if(contacts[i] === concat){
+            contacts.splice(i,1);
+        }
+    }
+},
+printAllContactNames: function(){
+    var ok = [];
+    for(var i = 0 < contacts.length; i++){
+        ok.push(contacts[i].nameFirst + " " + contacts[i].nameLast)
+    }return ok.join("\n")
+}
 }
 
 

@@ -6,11 +6,11 @@
 <<<<<<< HEAD
 ## how to install projects using opspark tool 
 1) in terminal, type => code ~/.bashrc
-2)on line 4 type   export CHE_PROJECTS_ROOTS=/workspace
+2)on line 4 type   export CHE_PROJECTS_ROOT=/workspace
 3) exit bashrc file
 4)kill terminal
 5)reopen new terminal 
-6)in terminal type => sudo atp-get install subversion
+6)in terminal type => sudo apt-get install subversion
 7) in terminal, type => npm install -g opspark
 8) in terminal, type => os install
 9) select bootcamp session 
