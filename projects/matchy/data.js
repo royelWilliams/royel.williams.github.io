@@ -87,9 +87,12 @@ console.log(animals.length);
 This also allows more than one friend to be looked at to see its details, etc.
 */
 var friends = [];
+
 function getRandom (animals){
-  
+  Math.random(animals);
+  return Math.random(animals);
 }
+console.log(friends);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
