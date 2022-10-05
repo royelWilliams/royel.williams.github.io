@@ -12,8 +12,8 @@
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 var animal ={};
-animal.species = "mammal";
-animal["name"] = "Lion";
+animal.species = "lion";
+animal["name"] = "George";
 animal.noises =[];
 console.log(animal);
 
@@ -76,8 +76,8 @@ var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze'
 // create for in loop to push object property to the array 
 animals.push(duck)
 console.log(animals);
- var cow ={ species: "cow", name:"Frankie", noise:["moo","yawn"] }
-var monkey = { species:"monkey", name:"limpy", noise: ["ohoh","ahah"] }
+ var cow ={ species: "cow", name:"Frankie", noises:["moo","yawn"] }
+var monkey = { species:"monkey", name:"limpy", noises: ["ohoh","ahah"] }
 animals.push(cow);
 animals.push(monkey);
 
@@ -95,14 +95,17 @@ var friends = [];
 
 function getRandom (animals){
   //Math.random(animals);
-  Math.floor(Math.random()* animals.length);
-  return Math.floor
+ //return Math.floor(Math.random()* animals.length);
+  return animals[Math.floor(Math.random()* animals.length -1)]
 }
 console.log(friends);
+//add the friends as a property 
+ animal["friends"] = friends;
+ console.log(friends);
 // create another index
-var newIndex = getRandom(animals);
+//var newIndex = getRandom(animals);
 // add it to the names array 
-friends.push(newIndex.name)
+//friends.push(newIndex.name)
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"

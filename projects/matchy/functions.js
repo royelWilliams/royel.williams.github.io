@@ -26,37 +26,64 @@
 // }
 
 function search(array, string){
-    for(var  i = 0; i = animals.length; i ++){
-      if (array.indexOf(string) !== -1){
-          return string[animals];
-      }
-      else{
-          return null;
-      }
+  //looping over the array to acces the objects
+    for(var  i = 0; i < array.length; i ++){
+      // array[i] = object and storing it 
+      var animalObject = array[i];
+      console.log(animalObject, string);
+      //using the Object.values to return a object that exsist
+      if (Object.values(animalObject).includes(string)){
+      console.log("this string passs");
+      return array[i];
     }
+    }
+    return null;
   }
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function replace(animals,array,name){
-    
+function replace(animals, name, replacement){
+    // loop over the array 
+    for (var i = 0; i < animals.length; i++){
+      //store the object that was looped over 
+      var objectLooped = animals[i];
+    // if the animal exsist replace the object found in the loop with the object being referenced 
+if(Object.values(objectLooped).includes(name)){
+  //update replacement at current index
+ //return objectLooped = replacement;
+animals[i] = replacement;
+console.log(animals, "happy");
+
+}
+//then replace the object 
     
 }
 
-
+}
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function remove(animals,animal){
-
+function remove(animals, name){
+  for (var i = 0; i < animals.length; i++){
+    //store the object that was looped over 
+    var objLooped = animals[i];
+  // if the animal exsist replace the object found in the loop with the object being referenced 
+if(Object.values(objLooped).includes(name)){
+//update replacement at current index
+ return animals.splice(i);
+ 
 }
-
-
+  }
+  }
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function add(animals,animal){}
+function add(animals,animal){
+  // if(animal !== animals){
+  //   animal.push(animals);
+  // }
+}
 
 
 /**
