@@ -26,23 +26,23 @@ console.log(animal);
 var noises = [];
 // push a sound using bracket notation 
 //noises.quietNoises = ['roar','purrr','growl','yip'];
+noises[0] = 'roar';
 
-noises.push('Roar');
-function array(){
-  noises.quietNoise.push('purrr');
+noises.push('purrr');
 noises.unshift('growl');
-noises.Array.prototype.findLastIndex('yip')
-}
+noises[noises.length]= "yip";
 console.log(noises.length);
-console.log();
+console.log(noises.length -1);
 console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
-
+// assign the noises property to the noises array 
+animal["noises"] = noises;
+noises.push("yawn");
+console.log(animal);
 /* *******************************************************************
  * Step 4 - Review
  *
@@ -70,11 +70,16 @@ Object destructuring: const { property } = object.
 //declare animals with empty array
 var animals = [];
 //push animal to animals 
-animal.push(animal["name"]);
+animals.push(animal);
 //create duck variable and and assign given object 
 var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }
 // create for in loop to push object property to the array 
-
+animals.push(duck)
+console.log(animals);
+ var cow ={ species: "cow", name:"Frankie", noise:["moo","yawn"] }
+var monkey = { species:"monkey", name:"limpy", noise: ["ohoh","ahah"] }
+animals.push(cow);
+animals.push(monkey);
 
 //console.log animals and length of animals 
 console.log(animals);
@@ -89,11 +94,15 @@ This also allows more than one friend to be looked at to see its details, etc.
 var friends = [];
 
 function getRandom (animals){
-  Math.random(animals);
-  return Math.random(animals);
+  //Math.random(animals);
+  Math.floor(Math.random()* animals.length);
+  return Math.floor
 }
 console.log(friends);
-
+// create another index
+var newIndex = getRandom(animals);
+// add it to the names array 
+friends.push(newIndex.name)
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
