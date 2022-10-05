@@ -12,25 +12,35 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function search(animals, string){
-    for(var key in object){
-        console.log(key);
-        console.log(object[key])
-    }
-    //comparing the string and the array
-if( animals === string){
-    return animals;
-}
-else{
-    return null;
-}
-}
+// function search(animals, string){
+//     for(var i = 0; i = animal.length; i++){
 
+//     } 
+//     //comparing the string and the array
+// if( animals === string){
+//     return animals;
+// }
+// else{
+//     return null;
+// }
+// }
+
+function search(array, string){
+    for(var  i = 0; i = animals.length; i ++){
+      if (array.indexOf(string) !== -1){
+          return string[animals];
+      }
+      else{
+          return null;
+      }
+    }
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function replace(animals,array,name){
+    
     
 }
 
