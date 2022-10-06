@@ -3,15 +3,30 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
-} 
+    //create a bin to push keys 
+   //var arr = [];
+   // for in loop 
+for(var key in object){
+    console.log(key);
+    console.log(objectValues[key]);
+    Object.values(object);
+    //return arr();
+}
+}
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    var string = [];
+    //for in loop 
+for(var string in object){
+    arr.push(objectOne);
+    arr.push(ObjectTwo);
+    return string();
+}
+//join keys and return 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,7 +34,13 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    var arr = [];
+    //for in loop 
+for(var arr in  object ){
+    arr.push(objectOne);
+    arr.push(ObjectTwo);
+    return arr();
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,6 +48,9 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
+// create a array 
+// create a loop 
+//
     
 }
 
