@@ -6,7 +6,7 @@
 <<<<<<< HEAD
 ## how to install projects using opspark tool 
 1) in terminal, type => code ~/.bashrc
-2)on line 4 type   export CHE_PROJECTS_ROOT=/workspace
+2)on line 4 type export CHE_PROJECTS_ROOT=/workspace
 3) exit bashrc file
 4)kill terminal
 5)reopen new terminal 
