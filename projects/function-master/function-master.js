@@ -4,16 +4,17 @@
 
 function objectValues(object) {
     //create a bin to push keys 
-   //var arr = [];
+   var arr = [];
    // for in loop 
 for(var key in object){
-    console.log(key);
-    console.log(objectValues[key]);
-    Object.values(object);
-    //return arr();
+   arr.push(object[key]);
+    //Object.values(object);
+//Object.values(object);
 }
-}
+    return arr();
 
+
+}
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -22,11 +23,14 @@ function keysToString(object) {
     var string = [];
     //for in loop 
 for(var string in object){
-    arr.push(objectOne);
-    arr.push(ObjectTwo);
-    return string();
+    // console.log(string);
+    // console.log(object[string]); 
+    string.push(object(string));
+
 }
 //join keys and return 
+string.join(' ');
+return string;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -34,13 +38,15 @@ for(var string in object){
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    var arr = [];
+    var sims = [];
     //for in loop 
-for(var arr in  object ){
-    arr.push(objectOne);
-    arr.push(ObjectTwo);
-    return arr();
+for(var sims in  object ){
+    // values 
+    sims.push(object[sims])
 }
+//join with a space between and return 
+sims.join(' ');
+return sims;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -49,9 +55,12 @@ for(var arr in  object ){
 
 function arrayOrObject(collection) {
 // create a array 
+
 // create a loop 
-//
-    
+ if (Array.isArray(collection)){
+return "object";
+ }
+else{ return "array";}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +68,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+var sam = string.charAt(0).toUppercase();
+    return sam;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,6 +77,8 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
+      return string.toUpperCase();
+     console.log(upper);
     
 }
 
@@ -76,6 +88,7 @@ function capitalizeAllWords(string) {
 
 function welcomeMessage(object) {
 
+    return welcome 
 }
 
 //////////////////////////////////////////////////////////////////////
