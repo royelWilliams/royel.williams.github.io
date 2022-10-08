@@ -85,7 +85,9 @@ function createEndsWithFilter(endsWith) {
     var wow = endsWith.toLowerCase();
 // //returning a function to test if it ends with is with a given character 
 return function(str){
+    // lowercase the string to make all of the characters the same upper/ lower case value 
     var my = str.toLowerCase();
+    // make a simple if starement 
     if(wow === my[my.length -1]){ 
     return true;
 }

@@ -83,15 +83,11 @@ function add(animals,animal){
   for (var i = 0; i < animals.length; i++){
     //store the object that was looped over 
     var objectsLooped = animals[i];
-  // object.values to return the object that exsist 
-// if(Object.values(objectsLooped).includes(animal)){
- 
-// }
 //const animalExists = animals.find((a) => a.name === animal.name);
 /*if the stored object of animals dosent equal the new object and 
 the animal name is > o and the animal species is greater than 0 
 then push the new animal object*/
-
+// use a if statement to compare the name length, the species length, and the loops 
 if (( objectsLooped !== animal ) && (animal.name.length > 0) && (animal.species.length > 0)) {
     animals.push(animal);}
     //else the object exsist return it 

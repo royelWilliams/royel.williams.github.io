@@ -12,8 +12,9 @@
  */
 function printArrayValues(array) {
   //YOUR CODE BELOW HERE //
-   
+   // loop through the array and then return the index of the array 
    for(var i = 0; i < array.length; i++){
+    // log the index of of the array 
      console.log(array[i]);
    }
   // var i = 0;
@@ -32,7 +33,7 @@ function printArrayValues(array) {
  * using console.log().
  */
 function printArrayValuesInReverse(array){
-
+// using the reverse loop properly to return the index
    for(var i = array.length -1 ; i >= 0;i--){
     //console.log(i);
       console.log(array[i]);
@@ -69,6 +70,7 @@ keys.push(key);
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   // create a output array 
+  // use a for in loop  then use console. log to return the key in the object 
 for(var key in object){
   console.log(key);
 }
@@ -82,6 +84,7 @@ function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
   //  for(var key in object){
   //   console.log(object[key])
+  // console. log the object values pass in object into the paramerter to show what object you are taking the values from 
     console.log(Object.values(object));
     return Object.values(object);
   }
@@ -92,8 +95,10 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
+  // create a for in loop to pass the values fro the object 
   for(var key in object){
     //console.log(key);
+    // go in the object loop and find all of the key values 
     console.log(object[key]);
   }
 }
@@ -107,6 +112,7 @@ function printObjectValues(object) {
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   //for(var key in object){
+    // using the . keys go into the key values of the object and then use the .length method to find the length of the keys 
 return Object.keys(object).length;
   }
    // YOUR CODE ABOVE HERE //
@@ -116,17 +122,13 @@ return Object.keys(object).length;
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-// Push object values into an array 
-// create a for in loop and then outside of the loop create an empty array 
-//  var array = [];
-// for(var key in object){
-//   console.log (key);
-//   console.log(object[key]);
+// 
 
 //var array = [];
 //loop over the array backwards 
 //Object.values(object);
 // this is the array  of values being passed into a loop
+// loop over the arr
 for(var i = Object.values(object).length -1; i >= 0;i--){
   
   console.log(Object.values(object)[i])}

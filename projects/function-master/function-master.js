@@ -8,8 +8,6 @@ function objectValues(object) {
    // for in loop 
 for(var key in object){
    arr.push(object[key]);
-    //Object.values(object);
-//Object.values(object);
 }
     return arr();
 
@@ -22,10 +20,10 @@ for(var key in object){
 function keysToString(object) {
     var string = [];
     //for in loop 
-for(var string in object){
+for(var key in object){
     // console.log(string);
     // console.log(object[string]); 
-    string.push(object(string));
+    string.push(object(key));
 
 }
 //join keys and return 
@@ -77,9 +75,9 @@ var sam = string.charAt(0).toUppercase();
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-      return string.toUpperCase();
+     
      console.log(upper);
-    
+    return string.toUpperCase();
 }
 
 //////////////////////////////////////////////////////////////////////
