@@ -82,18 +82,26 @@ if(Object.values(objLooped).includes(name)){
 function add(animals,animal){
   for (var i = 0; i < animals.length; i++){
     //store the object that was looped over 
-    var objectsLooped = animals[i];
+    var objectLooped = animals[i];
 //const animalExists = animals.find((a) => a.name === animal.name);
 /*if the stored object of animals dosent equal the new object and 
 the animal name is > o and the animal species is greater than 0 
 then push the new animal object*/
 // use a if statement to compare the name length, the species length, and the loops 
-if (( objectsLooped !== animal ) && (animal.name.length > 0) && (animal.species.length > 0)) {
+if ((objectLooped.name !== animal.name) && (animal.name.length > 0) && (animal.species.length > 0)) {
     animals.push(animal);}
     //else the object exsist return it 
-   else  if(Object.values(objectsLooped).includes(animal)){
+   else  if(Object.values(objectLooped).includes(animal)){
+  } 
+  else if ((objectLooped.name === animal.name) && (animal.name.length > 0) && (animal.species.length > 0)){
+  return " already defined";
   }
   }
+  /*r 
+  if the conditions are met in the for loop and the if statement is true then the animal object 
+  will be pushed into the animals array of objects 
+  */
+  return animals.push(animal); 
 }
 /**
  * You did it! You're all done with Matchy!
