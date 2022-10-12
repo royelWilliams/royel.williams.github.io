@@ -49,14 +49,16 @@ _.typeOf = function(value){
 else if(typeof(value) === "number"){
     return "number";
 }
- //else if(typeof(value)=== Array.isArray()){
-//return "array";}
+else if(typeof(value)=== "function"){ 
+    return "function";} 
+else if(typeof(array) === Array.isArray(value)){
+return "array";}
  else if(typeof(value) === "object"){
    return "object";}
    else if(typeof(value)=== "undefined"){
         return "undefined";}
- //else if(typeof(vlaue)=== "boolean"){
-         //   return "boolean"; }
+ else if(typeof(vlaue)=== "boolean"){
+          return "boolean"; }
 // else if(typrof(value)=== "null"){
       //     return "null";
 //         }
