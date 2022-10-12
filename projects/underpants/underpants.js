@@ -43,13 +43,13 @@ return value;
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-_.typeOf = function (anyValue){
-    if(typeOf === anyValue )
-    return anyVAlue
-}
-else if (typeOf === Array.isArray){
- return happy;
-}
+// _.typeOf = function (anyValue){
+//     if(typeOf === anyValue )
+//     return anyVAlue
+// }
+// else if (typeOf === Array.isArray){
+//  return happy;
+// }
 //else if(typeof === )
 
 /** _.first
@@ -69,17 +69,17 @@ else if (typeOf === Array.isArray){
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
-_.first = function (array, number){
-if(array === Array.isArray()){
-    return [];
-}
- else if(number !== number){
-    return array[0];
-}
-else{
-    return array.slice(0, number, -number);
-}
-}
+// _.first = function (array, number){
+// if(array === Array.isArray()){
+//     return [];
+// }
+//  else if(number !== number){
+//     return array[0];
+// }
+// else{
+//     return array.slice(0, number, -number);
+// }
+// }
 
 /** _.last
 * Arguments:
@@ -98,19 +98,19 @@ else{
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
- _. last = function(array, number){
-     var arr = [];
+//  _. last = function(array, number){
+//      var arr = [];
 
-    if(array !== Array.isArray){
-        return arr;
-    }
-    else if (!number) {
-        return array.length-1
-    }
-      else{
+//     if(array !== Array.isArray){
+//         return arr;
+//     }
+//     else if (!number) {
+//         return array.length-1
+//     }
+//       else{
 
-        return number.length -1;
-  }
+//         return number.length -1;
+//   }
     
 
 
@@ -164,9 +164,53 @@ function indexOf(array, value){
 *      with the arguments:
 *         the property's value, it's key, <collection>
 * Examples:
-*   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
-*      -> should log "a" "b" "c" to the console
+ *      -> should log "a" "b" "c" to the console
 */
+_.each = function( collection, func){
+      // determine if function is not provided 
+      if(func === undefined){
+        //determine if it is an array
+if(Array.isArray(collection)){
+    //iterate through a loop 
+for(let i = 0; i < collection.length; i++){
+    if(collection[i]){
+     //determine if collection[i] it is a falty datatype    
+      return false;
+    }
+}
+}
+    else{
+        for(let key in collection){
+            if(collection[key]){
+                return false;
+            }
+        }
+    }
+}
+ else{
+    //else a function was involved 
+    if(Array.isArray(collection)){
+        //iterate through the collection
+        for(let i =0;i< collection.length;i++){
+            //what am i determining
+            if(func(collection[i],i,collection) === false){
+                return false;
+            }
+        }
+    }else{
+        //iterate through a object
+        for(let key in collection){
+            if(func(collection[key], key, collection)=== false){
+                return false;
+            }
+        }
+
+    }
+}
+return true;
+}
+      
+      
 
 
 /** _.unique
@@ -340,11 +384,11 @@ _.reducr = function( array, func, seed){}
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-_.extend = fnction(object, object){
-    for(var key in object){
-     Object.assign(object)   
-    }
-}
+// _.extend = fnction(object, object){
+//     for(var key in object){
+//      Object.assign(object)   
+//     }
+// }
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -354,4 +398,4 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = _;
 }
- }
+
