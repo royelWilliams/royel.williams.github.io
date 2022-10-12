@@ -5,13 +5,12 @@
 function objectValues(object) {
     //create a bin to push keys 
    var arr = [];
-   // for in loop 
+   // for in loop to go through the object 
 for(var key in object){
+    // push the key out of the object 
    arr.push(object[key]);
 }
-    return arr();
-
-
+    return arr;
 }
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
@@ -23,12 +22,13 @@ function keysToString(object) {
 for(var key in object){
     // console.log(string);
     // console.log(object[string]); 
-    string.push(object(key));
+    string.push(key);
 
 }
 //join keys and return 
-string.join(' ');
-return string;
+//string.join(' ');
+//console.log(string.join(' '), "here");
+return string.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -38,13 +38,18 @@ return string;
 function valuesToString(object) {
     var sims = [];
     //for in loop 
-for(var sims in  object ){
+for(var key in object ){
     // values 
-    sims.push(object[sims])
+   // sims.push(object[key])
+    //console.log(sims, "over");
+if (typeof object[key] === "string"){
+    sims.push(object[key]);
+}
 }
 //join with a space between and return 
-sims.join(' ');
-return sims;
+//sims.join(' ');
+//console.log( sims, "hi");
+return sims.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -52,13 +57,12 @@ return sims;
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-// create a array 
-
-// create a loop 
+// use a if statement  and the Array.isArray method to go through the collections
+//object then returning array if an array else returning an object from the object 
  if (Array.isArray(collection)){
-return "object";
+return "array";
  }
-else{ return "array";}
+else{ return "object";}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -66,7 +70,12 @@ else{ return "array";}
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-var sam = string.charAt(0).toUppercase();
+    /* use the charAt in (0 index) upper case that letter at the 0 index 
+then by using the substr(taking out the lowercased letter) at the index 1 
+so all that is left is the string with the uppercase letter first
+*/
+    var sam = string.charAt(0).toUpperCase() + string.substr(1);
+//console.log(sam);
     return sam;
 }
 
@@ -75,17 +84,32 @@ var sam = string.charAt(0).toUppercase();
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-     
-     console.log(upper);
-    return string.toUpperCase();
+    // split string into an array 
+    var array = string.split(" ");
+    var str = "";
+   // console.log(string.split(" "));
+    //single out the first letter in each sring in the array 
+    for( var i = 0; i < array.length; i++){
+        // using previous example to uppercase the first letter in the strings
+        var dan = array[i].charAt(0).toUpperCase() + array[i].substr(1);
+        console.log(dan)
+        
+    str += dan + " ";  
 }
-
+console.log(str);
+// using trim to get rid of space in last index
+return str.trim();
+}
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
 
+var arr =[];
+for(var key in object){
+    arr += "welcome" + key + "!"
+}
     return welcome 
 }
 
