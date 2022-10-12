@@ -43,14 +43,29 @@ return value;
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-// _.typeOf = function (anyValue){
-//     if(typeOf === anyValue )
-//     return anyVAlue
-// }
-// else if (typeOf === Array.isArray){
-//  return happy;
-// }
-//else if(typeof === )
+_.typeOf = function(value){
+    if(typeof(value) === "string"){
+    return "string";}
+else if(typeof(value) === "number"){
+    return "number";
+}
+ //else if(typeof(value)=== Array.isArray()){
+//return "array";}
+ else if(typeof(value) === "object"){
+   return "object";}
+   else if(typeof(value)=== "undefined"){
+        return "undefined";}
+ //else if(typeof(vlaue)=== "boolean"){
+         //   return "boolean"; }
+// else if(typrof(value)=== "null"){
+      //     return "null";
+//         }
+ //else if(typeof(value === "function"){
+ //return "function";
+//         }
+
+    
+}
 
 /** _.first
 * Arguments:
@@ -69,17 +84,34 @@ return value;
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
-// _.first = function (array, number){
-// if(array === Array.isArray()){
-//     return [];
-// }
-//  else if(number !== number){
-//     return array[0];
-// }
-// else{
-//     return array.slice(0, number, -number);
-// }
-// }
+_.first = function (array, number){
+    //empty array to hold the arrays
+    let arr = [];
+
+  //if number is not a number (!number)  and if number is not 1 
+    if(number === 1 || !number){
+        return array[0];
+    }
+   // if number is less than 0 then it is not needed (edgecase)
+// if array is not an array
+    else if(number < 0 || !Array.isArray(array)){
+        return [];
+    } 
+     // if number is greater than the lenngth of the array 
+     else if(number > array.length){
+        // you will still have all of the elements so just return the array 
+         return array;
+     }
+    
+    else {
+        //pushing elements through a loop 
+        for(var i = 0; i < number; i++){
+            //return the index arrays
+         arr.push(array[i]);
+        }
+     return arr;
+    }
+}
 
 /** _.last
 * Arguments:
@@ -98,22 +130,27 @@ return value;
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-//  _. last = function(array, number){
-//      var arr = [];
-
-//     if(array !== Array.isArray){
-//         return arr;
-//     }
-//     else if (!number) {
-//         return array.length-1
-//     }
-//       else{
-
-//         return number.length -1;
-//   }
+ _. last = function(array, number){
+      if(number === 1 || !number){
+        return array[array.length-1];
+    }
+   // if number is less than 0 then it is not needed (edgecase)
+// if array is not an array
+    else if(number < 0 || !Array.isArray(array)){
+        return [];
+    } 
+     // if number is greater than the lenngth of the array 
+     else if(number > array.length){
+        // you will still have all of the elements so just return the array 
+         return array;
+     }
     
-
-
+    else {
+        // start at the 0th index of the array and stop at number 
+ return array.slice( number- 1, array.length);   }
+   
+}
+      
 /** _.indexOf
 * Arguments:
 *   1) An array
