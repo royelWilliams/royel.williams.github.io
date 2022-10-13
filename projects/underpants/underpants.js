@@ -164,15 +164,19 @@ _.first = function (array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 _.indexOf = function(array, value){
+
+    // loop through the array
+    
     // loop through the array
     for(var i = 0; i < array.length ; i++){
-        if(array[i]=== value[0]){
-            return
+        if(array[i] === value[0]){
+            return i
         }
-    
-    }
-   
-}
+      
+     }
+      return -1
+           
+        }
 /** _.contains
 * Arguments:
 *   1) An array
@@ -190,15 +194,8 @@ _.indexOf = function(array, value){
 _.contains = function(array, value){
     for(var i = 0; i < array.length;i++){
         // using the ternary operator 
-        array.includes(value) ? true: false;
-        //return true if array contain value 
-        if(array.includes(value)){
-            return true;
-        }
-        // return false if there is no value 
-        else if(array.includes(!value)){
-            return false 
-        }
+        return array.includes(value) ? true: false;
+        
     }
 }
 
@@ -243,9 +240,20 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-// _. unique = function(array){
-//     return array.indexOf();
-// }
+_. unique = function(array){
+    // empty array to repersent the new array
+    var newArray = [];
+//loop through the array 
+for(var i = 0; i < array.length; i++){
+    //if the new array takes the index of the old array taking out the repeating values 
+if(newArray.indexOf(array[i]) === -1){
+    //push the indexes of the old array into the new array  
+    newArray.push(array[i]);
+}  
+}
+// return the new array 
+return newArray;
+}
 
 /** _.filter
 * Arguments:
@@ -262,7 +270,9 @@ _.each = function(collection, func){
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array, func){
+    var arr = [];
+}
 
 /** _.reject
 * Arguments:
