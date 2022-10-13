@@ -49,24 +49,19 @@ _.typeOf = function(value){
 else if(typeof(value) === "number"){
     return "number";
 }
-else if(typeof(value)=== "function"){ 
-    return "function";} 
-else if(typeof(array) === Array.isArray(value)){
+else if(value === null){ 
+    return "null";} 
+else if(Array.isArray(value) === true){
 return "array";}
  else if(typeof(value) === "object"){
    return "object";}
    else if(typeof(value)=== "undefined"){
         return "undefined";}
- else if(typeof(vlaue)=== "boolean"){
+ else if(typeof(value)=== "boolean"){
           return "boolean"; }
-// else if(typrof(value)=== "null"){
-      //     return "null";
-//         }
- //else if(typeof(value === "function"){
- //return "function";
-//         }
-
-    
+else{
+    return "function";
+}   
 }
 
 /** _.first
@@ -168,13 +163,13 @@ _.first = function (array, number){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-function indexOf(array, value){
-   // if()
-   // else if(value !== array){
-       // return -1;
-    //}
-    //else()
-}
+// _.indexOf function(array, value){
+//    if()
+//    else if(value !== array){
+//        return -1;
+//     }
+//     else()
+// }
 /** _.contains
 * Arguments:
 *   1) An array
@@ -248,10 +243,6 @@ for(let i = 0; i < collection.length; i++){
 }
 return true;
 }
-      
-      
-
-
 /** _.unique
 * Arguments:
 *   1) An array
@@ -261,7 +252,9 @@ return true;
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+// _. unique = function(array){
+//     return array.indexOf();
+// }
 
 /** _.filter
 * Arguments:
@@ -329,7 +322,19 @@ return true;
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(collection, func){
+    let newArray1 = [];
+    if(Array.isArray(collection)){
+        for(let i = 0; i < collection.length; i++){
+            newArray1.push(func(collection[i],i,collection))
+        }
+    }else{
+        for(let key in collection){
+            newArray1.push(func(collection[key], key,collection));
+        }
+    }
+    return newArray1;
+}
 
 /** _.pluck
 * Arguments:
@@ -385,9 +390,6 @@ return true;
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-_.some = function(collection, func){
-
-}
 
 /** _.reduce
 * Arguments:
@@ -407,7 +409,25 @@ _.some = function(collection, func){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-_.reducr = function( array, func, seed){}
+_.reduce = function( array, func, seed){
+    // create result value 
+    let result;
+    if(seed === undefined){
+        result = array[0];
+        // iterate through the array 
+        for(let i = 1; i < array.length; i++){
+result = func(result, array[i], i, array);
+        }
+    }else { 
+        result = seed;
+    //iterates through array 
+for(let i = 0; i < array.length; i++){
+   //assign result to the  result of the invoking callback function 
+   result = func(result, array[i], i,array);
+}
+}
+return result;
+}
 
 /** _.extend
 * Arguments:
@@ -426,7 +446,7 @@ _.reducr = function( array, func, seed){}
 // _.extend = fnction(object, object){
 //     for(var key in object){
 //      Object.assign(object)   
-//     }
+//     } 
 // }
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
