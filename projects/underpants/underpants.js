@@ -163,13 +163,16 @@ _.first = function (array, number){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-// _.indexOf function(array, value){
-//    if()
-//    else if(value !== array){
-//        return -1;
-//     }
-//     else()
-// }
+_.indexOf = function(array, value){
+    // loop through the array
+    for(var i = 0; i < array.length ; i++){
+        if(array[i]=== value[0]){
+            return
+        }
+    
+    }
+   
+}
 /** _.contains
 * Arguments:
 *   1) An array
@@ -184,7 +187,20 @@ _.first = function (array, number){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(array, value){
+    for(var i = 0; i < array.length;i++){
+        // using the ternary operator 
+        array.includes(value) ? true: false;
+        //return true if array contain value 
+        if(array.includes(value)){
+            return true;
+        }
+        // return false if there is no value 
+        else if(array.includes(!value)){
+            return false 
+        }
+    }
+}
 
 /** _.each
 * Arguments:
@@ -200,49 +216,24 @@ _.first = function (array, number){
 * Examples:
  *      -> should log "a" "b" "c" to the console
 */
-_.each = function( collection, func){
-      // determine if function is not provided 
-      if(func === undefined){
-        //determine if it is an array
-if(Array.isArray(collection)){
-    //iterate through a loop 
-for(let i = 0; i < collection.length; i++){
-    if(collection[i]){
-     //determine if collection[i] it is a falty datatype    
-      return false;
-    }
-}
-}
-    else{
-        for(let key in collection){
-            if(collection[key]){
-                return false;
-            }
-        }
-    }
-}
- else{
-    //else a function was involved 
+_.each = function(collection, func){
+    //determine if collection is array
     if(Array.isArray(collection)){
-        //iterate through the collection
-        for(let i =0;i< collection.length;i++){
-            //what am i determining
-            if(func(collection[i],i,collection) === false){
-                return false;
-            }
+        //iterate through collection with a loop 
+        for(var i =0; i < collection.length;i++){
+            //call the input func on each element 
+            //func(current element, curent index, array)
+            func(collection[i], i, collection);
         }
-    }else{
-        //iterate through a object
+        //else its a object 
+    } else {
+        //iterate through a loop 
         for(let key in collection){
-            if(func(collection[key], key, collection)=== false){
-                return false;
-            }
+            func(collection[key], key, collection);
         }
-
     }
 }
-return true;
-}
+
 /** _.unique
 * Arguments:
 *   1) An array
@@ -346,7 +337,11 @@ _.map = function(collection, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-
+// _.pluck= function(array, property){
+//     return _.map(array, func[i]){
+//         return i[property];
+//     }
+// }
 
 /** _.every
 * Arguments:
@@ -369,6 +364,50 @@ _.map = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func){
+     
+    // determine if function is not provided 
+    if(func === undefined){
+      //determine if it is an array
+if(Array.isArray(collection)){
+  //iterate through a loop 
+for(let i = 0; i < collection.length; i++){
+  if(!collection[i]){
+   //determine if collection[i] it is a falty datatype    
+    return false;
+  }
+}
+}
+  else{
+      for(let key in collection){
+          if(!collection[key]){
+              return false;
+          }
+      }
+  }
+}
+else{
+  //else a function was involved 
+  if(Array.isArray(collection)){
+      //iterate through the collection
+      for(let i = 0;i < collection.length;i++){
+          //what am i determining
+          if(func(collection[i], i, collection) === false){
+              return false;
+          }
+      }
+  }else{
+      //iterate through a object
+      for(let key in collection){
+          if(func(collection[key], key, collection)=== false){
+              return false;
+          }
+      }
+
+  }
+}
+return true;
+}
 
 /** _.some
 * Arguments:
