@@ -217,7 +217,7 @@ _.each = function(collection, func){
     //determine if collection is array
     if(Array.isArray(collection)){
         //iterate through collection with a loop 
-        for(var i =0; i < collection.length;i++){
+        for(var i = 0; i < collection.length;i++){
             //call the input func on each element 
             //func(current element, curent index, array)
             func(collection[i], i, collection);
@@ -272,7 +272,19 @@ return newArray;
 */
 _.filter = function(array, func){
     var arr = [];
-}
+        //iterate through collection with a loop 
+        for(var i =0; i < array.length;i++){
+            //call the input func on each element 
+            if(func(array[i], i, array) === true ){
+                arr.push(array[i])
+            }
+        }
+            //func(current element, curent index, array)
+       
+return arr;
+    }
+
+
 
 /** _.reject
 * Arguments:
@@ -286,7 +298,20 @@ _.filter = function(array, func){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+_.reject = function(array, func){
+    var arr = [];
+    //iterate through collection with a loop 
+    for(var i =0; i < array.length;i++){
+        //call the input func on each element 
+        if(func(array[i], i, array) === false ){
+            arr.push(array[i])
+        }
+    }
+        //func(current element, curent index, array)
+   
+return arr;
 
+}
 
 /** _.partition
 * Arguments:
@@ -352,7 +377,9 @@ _.map = function(collection, func){
 //         return i[property];
 //     }
 // }
-
+_.pluck = function(object, property){
+    
+}
 /** _.every
 * Arguments:
 *   1) A collection
@@ -492,11 +519,12 @@ return result;
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-// _.extend = fnction(object, object){
-//     for(var key in object){
-//      Object.assign(object)   
-//     } 
-// }
+_.extend = function(object1, object2){
+    
+    for(var key in object1){
+     Object.assign(object)   
+    } 
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
