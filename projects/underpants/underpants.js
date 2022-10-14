@@ -331,6 +331,22 @@ return arr;
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+_.partition = function(array, func){
+    var original = [];
+    var truthy = [];
+       var falsy = [];
+
+        _.each(array,function(element,key,array){
+     if(func(element,key,array) === true){
+        truthy.push(array[key]);
+     }else {
+      falsy.push(array[key])
+}
+});
+original.push(truthy,falsy);
+return original;
+};
+    
 
 
 /** _.map
@@ -377,9 +393,13 @@ _.map = function(collection, func){
 //         return i[property];
 //     }
 // }
-_.pluck = function(object, property){
-    
-}
+
+    _.pluck = function(array, property){
+        return _.map(array, function(index){
+    return index[property];
+        })
+    }
+
 /** _.every
 * Arguments:
 *   1) A collection
@@ -466,6 +486,25 @@ return true;
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection,test){
+    // similar to every
+    let result = false;
+    if(test){
+        _.map(collection,function(element,index,array){
+            if(test(element,index,array) === true){
+               return  result = true;
+            }
+        });
+    } else{
+        _.map(collection,function(element){
+            if(element === true){
+              return result = true; 
+            }
+        });
+        
+    }
+    return result;
+};
 
 /** _.reduce
 * Arguments:
@@ -519,12 +558,22 @@ return result;
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-_.extend = function(object1, object2){
+
+_.extend = function(obj1, ...object2){
+    // we need to copy properties from ...obj to obj1
+    // return the updated obj1
     
-    for(var key in object1){
-     Object.assign(object)   
-    } 
-}
+    // first we need use a for loop to loop through object two because it is somewhat of an array now thinks to the spread operator
+    for(var i = 0; i < object2.length; i++){
+    // use a for in loop to apply everything from    
+      for(let key in object2[i]){
+        obj1[key] = object2[i][key];
+    }
+    }
+       return obj1;
+   };
+   
+   
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
