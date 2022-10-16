@@ -105,12 +105,17 @@ return str.trim();
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+    //create a variable and locate the object name 
+ var name = object.name;
+ // uppercase the first letter of the object name and add the rest unchanged
+ var capitalName = name[0].toUpperCase() + name.substr(1);
+ //console.log(capitalName,"here");
+ // create a welcome statement using strings and the object name 
+ var welcomeSent = "Welcome " + capitalName + "!";
 
-var arr =[];
-for(var key in object){
-    arr += "welcome" + key + "!"
-}
-    return welcome 
+ return welcomeSent;
+console.log("!", welcomeSent);
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -118,7 +123,14 @@ for(var key in object){
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+var name = object.name; 
+var nameUpper = name[0].toUpperCase() + name.substr(1);
+console.log(nameUpper);
+var species = object.species;
+var speciesUpper = species[0].toUpperCase() + species.substr(1);
+var together = nameUpper + " is a " + speciesUpper;
+console.log(together);
+ return together;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -126,23 +138,47 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+ //  assign a variable and retrieve the the noises key from the object 
+             var noises = object.noises;
+            //console.log(noises.join(" "));
+            // make sure it is an array 
+             var array = Array.isArray(noises);
+          // if object has a noise array return them as a string
+            if(array && noises.length > 1){
+              return noises.join(" ");
+            }
+            //if there are no noses return  string "there are no noises"
+            else {
+              return "there are no noises"
+          } 
+          }
 
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+        // using the includes method go through the string and see if the word is being used if so true 
+          if(string.includes(word)){
+            return true;
+          }
+          else {
+           return false;
+          }
+          // if word is not there return false 
+        }
 
-}
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+// get the frinds array  add the name using push and return object 
+object.friends.push(name); 
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -150,7 +186,15 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+// does the array exsist and is the name a actual friend in the array 
+if(Array.isArray(object.friends) && object.friends.includes(name)){
+    return true;
+  }
+// return true if name is a friend in the objecet
+else {
+  return false;
+    }
+  // false otherwise 
 }
 
 //////////////////////////////////////////////////////////////////////
