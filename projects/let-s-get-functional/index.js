@@ -30,15 +30,24 @@ let males=_.filter(array,function(customer,index,array){
 return male.length
 };
 
-var femaleCount;
+var femaleCount = function(array){
+    //implemwnt _.reduce() to return the number of female customers 
+    let numFrmales =_.reduce(array,function(acc,current,index,array){
+        //determine if customer is female 
+        if(current.gender === "female"){
+            acc += 1;//acc= acc + 1;
+        }
+        return acc;
+    })
+}
 
 var oldestCustomer = function(array){
-   return _.reduce(array, function (acc, current) {
+   return _.reduce(array, function (acc, current){
     if(current.age > acc.age){
         acc = current.name;
     }
+    return acc;
    })
-return acc;
 }
         
 var youngestCustomer = function(array){
@@ -47,18 +56,19 @@ var youngestCustomer = function(array){
 
 
 var averageBalance = function(array){
-    array_.reduce(array.length);
-    var sum = 0;
-    for(var i=0;i< array.length;)
-;
- 
+     let total = _.reduce(array, function(acc, current){
+        let currentnum =current.balence.replace(/[f,]/g,"")
+        return acc = (currentnum);
+     
+     })
+     return total/array.length;
+    }
 var firstLetterCount = function (array, letter){
     var upper = array.toUpperCase(letter)
     
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
-array{2 }
 }
 
 var friendsCount;

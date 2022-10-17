@@ -202,6 +202,19 @@ else {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+  var notFriends = [];
+// loop through the array 
+for(let i = 0; i < array.length; i++){
+    // edge case: if the name of the person === name then do nothing
+    if(array[i].name === name){
+     // if the name is not a friend then push name into arr     
+    } else if(!array[i].friends.includes(name)){
+        notFriends.push(array[i].name)
+        
+    } 
+} console.log(notFriends);
+return notFriends;
+
 
 }
 
@@ -210,7 +223,8 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+  object[key] = value;
+  return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -218,7 +232,12 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    // create a loop to get to the array elements 
+    for (var i = 0; i < array.length; i++){
+      // now that i have access to the array elements i can delete the given key if its in the array 
+      delete object[array[i]];
+    }
+    return  object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -226,8 +245,10 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+         return [...new Set(array)];
+  }
 
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
