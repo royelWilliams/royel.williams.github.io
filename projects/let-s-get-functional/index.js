@@ -27,38 +27,39 @@ let males=_.filter(array,function(customer,index,array){
     //return true if the input customer is male 
     return customer.gender === 'male'; 
 })
-return male.length
+return males.length;
 };
 
 var femaleCount = function(array){
     //implemwnt _.reduce() to return the number of female customers 
-    let numFrmales =_.reduce(array,function(acc,current,index,array){
+     return _.reduce(array,function(acc,current,index,array){
         //determine if customer is female 
         if(current.gender === "female"){
             acc += 1;//acc= acc + 1;
         }
         return acc;
     })
-}
+};
 
 var oldestCustomer = function(array){
    return _.reduce(array, function (acc, current){
     if(current.age > acc.age){
-        acc = current.name;
+        acc += current.name;
+    }
+    else{
+        return acc;
     }
     return acc;
-   })
-}
+   },0);
+};
         
 var youngestCustomer = function(array){
 
 }
-
-
 var averageBalance = function(array){
      let total = _.reduce(array, function(acc, current){
-        let currentnum =current.balence.replace(/[f,]/g,"")
-        return acc = (currentnum);
+        let currentNum =current.balence.replace(/[f,]/g,"")
+        return acc = (currentNum);
      
      })
      return total/array.length;

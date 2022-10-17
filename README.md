@@ -34,3 +34,7 @@
 # How to push code to myLodown
 1) Make sure your terminal reads /workspace/my-lodown
 2) run git commmands
+# lets get functional 
+cd projects/let-s-get-functional
+
+npm install underbar

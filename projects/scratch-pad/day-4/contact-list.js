@@ -36,50 +36,24 @@
 // YOUR CODE GOES BELOW HERE //
 // factory function that is returning an object 
 function makeContact(id, nameFirst, nameLast){
-     return {
-        id: id,
-        nameFirst :nameFirst,
-        nameLast: nameLast,
-        }
-    }
-
-
-var contacts = []; 
-         return    {
-         id: id,
-         FirsName: nameFirst,
-         LastName: nameLast
-         };
-
-         
-         function makeContactList(id, nameFirst, nameLast) {
-         var contacts = [];
-         return { 
-              id: id,
-              FirstName: nameFirst,
-               LastName: nameLast,
-
-
+     return { id: id, nameFirst :nameFirst,nameLast: nameLast}
+    
+}        
     //should take the full name string and return contact obj
     // loop over the contacts array 
     //use a if statement and the splice statement
     //loop over the contact array use a if statement
-
-}
-
-} 
-         
-
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
     var contacts = [];
-    contacts.length;
-     contacts()
-    contacts()
-    removeContacts()
-    function printAllContactNames(){}
+    // contacts.length;
+    //  contacts()
+    // contacts()
+    // removeContacts()
+    
+    // function printAllContactNames(){}
     return {
         // we implemented the length api for you //
         length: function() {
@@ -88,9 +62,13 @@ function makeContactList() {
     contacts: function(contact){
         contacts.push(contact);
     },
+
+addContact: function(contact){
+    contacts.push(contact);
+},
+  
     
-    }
-    findContacts: function(fullName){
+    findContact: function(fullName){
         for(var i =0; i < contacts.length; i++){
             if(contacts[i].nameFirst + " " + contacts[i].nameLast === fullName){
                 return contacts[i];
@@ -100,17 +78,18 @@ function makeContactList() {
     },
 removeContact: function(contact){
     //loop over arrays
-    for(var i = 0; i< contact.length; i++){
-        if(contacts[i] === concat){
+    for(var i = 0; i < contacts.length; i++){
+        if(contacts[i] === contact){
             contacts.splice(i,1);
         }
     }
 },
 printAllContactNames: function(){
     var ok = [];
-    for(var i = 0 < contacts.length; i++){
+    for(var i = 0 ; i < contacts.length; i++){
         ok.push(contacts[i].nameFirst + " " + contacts[i].nameLast)
     }return ok.join("\n")
+}
 }
 }
 
