@@ -59,7 +59,7 @@ var sumBelow = function(n) {
 var range = function(x, y) {
   if (y - x === 2) 
   {
-    return [ x+ 1];
+    return [ x + 1];
   } 
   else 
   {
@@ -117,17 +117,19 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 //palindrome - when a word can be spelled the same both ways 
 var palindrome = function(string) {
-  if(string.length === 1|| string.length === 0)
+  // base 
+  if(string.length === 1){
+  // a =a its the same letter so it will repeat itself so you need at least one letter 
   return true;
-  //the length  be 0 b/c there would be no length
-  // the length  be 1 b/c thre is nothing to compare it to 
-  // the string length has to be 2 to be compared 
-if( firstChr(string) === lastChr(string)){
-// then you have to compare the first and last parts of the string 
-return palindrome(middleChr(string));}
-// return the middle if that letter is different or dosent have a double 
+  }
+  if(string.length === 2){
+    return string[0] === string[1];
+  }
+  if(string[0] === string.slice(-1)){
+  return palindrome(string.slice(1,-1));
+  } 
+ // recrusion 
 return false;
-// if none of the things work the word is normal
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -177,27 +179,56 @@ var compareStr = function(str1, str2) {
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str){
+  if(!str.length) return []; // return an empty array when the string is empty
+  
+  return [
+    str[0], // take the current letter
+    ...createArray(str.slice(1)) // pass the rest of the string to createArr
+  ]
 };
 
 // 17. Reverse the order of an array
 var reverseArr = function (array) {
+  var array= [];
+  function reverse(array){
+    if (array.length !== 0){
+      reverseArr.push(array.pop() );
+      reverseArr(array);
+    }
+  }
+
+  reverser(toBeReversed);
+  return reversed;
 };
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+  if (length === 0) {
+    return [];
+ }
+
+ return [value].concat(buildList(value, length - 1));
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
+  if(!array.length) return 0;
+  return (array[0] === value) + countOccurrence(array.slice(1), value);
 };
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
 var rMap = function(array, callback) {
+  if(array.length === 1){
+    return callback(array)
+  }
+  else{
+    return[callback(array[0])].concat(rMap(array.slice(1), callback))
+  }
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
