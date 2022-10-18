@@ -48,11 +48,25 @@ else{
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  if(n === 0){
+    return 0;
+  }
+  return n - 1 + sumBelow(n-1);
 };
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
+  if (y - x === 2) 
+  {
+    return [ x+ 1];
+  } 
+  else 
+  {
+    var list = range(x, y - 1);
+    list.push(y - 1);
+    return list;
+  }
 };
 
 // 7. Compute the exponent of a number.
@@ -61,6 +75,14 @@ var range = function(x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+  if (exp === 0) 
+   {
+    return 1;
+    }
+  else 
+  {
+    return base * exponent(base, exp-1);
+  }
 };
 
 // 8. Determine if a number is a power of two.
@@ -68,14 +90,44 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  if(n === 1){
+    return true;
+ };
+ if(n % 2 !== 0){
+    return false;
+ }
+ return PowerOfTwo(n / 2);
+
 };
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  if(string.length <= 1){
+    return string;
+  }
+  else{
+    return string.charAt(string.length - 1) + reverse(string.substring(0, string.length - 1));
+    /*return string at the character -1 so you can keep going down 
+     then you have to call the reverse function with the new string  and use the new first character 
+     and again go through the new function thats being created minus 1
+    */
+  }
 };
 
 // 10. Write a function that determines if a string is a palindrome.
+//palindrome - when a word can be spelled the same both ways 
 var palindrome = function(string) {
+  if(string.length === 1|| string.length === 0)
+  return true;
+  //the length  be 0 b/c there would be no length
+  // the length  be 1 b/c thre is nothing to compare it to 
+  // the string length has to be 2 to be compared 
+if( firstChr(string) === lastChr(string)){
+// then you have to compare the first and last parts of the string 
+return palindrome(middleChr(string));}
+// return the middle if that letter is different or dosent have a double 
+return false;
+// if none of the things work the word is normal
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -90,6 +142,13 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+if(x==0 || y == 0){
+  return 0;
+}
+if(x == 1){
+  return y;
+}
+return multiply(x- 1, y) + y
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
