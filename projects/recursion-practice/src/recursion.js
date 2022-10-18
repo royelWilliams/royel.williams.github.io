@@ -50,6 +50,10 @@ else{
 var sumBelow = function(n) {
   if(n === 0){
     return 0;
+    
+  }
+  else if( n < 0){
+ return n + 1 + sumBelow(n + 1);
   }
   return n - 1 + sumBelow(n-1);
 };
@@ -75,13 +79,15 @@ var range = function(x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
-  if (exp === 0) 
-   {
+  if (exp === 0) {
     return 1;
     }
+   else if(exp < 0){
+    return 1 / (exponent (base, -1 * exp));
+   }
   else 
   {
-    return base * exponent(base, exp-1);
+    return base * exponent(base, exp - 1);
   }
 };
 
@@ -102,16 +108,16 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
-  if(string.length <= 1){
+  if(string.length === 0){
     return string;
   }
-  else{
+  
     return string.charAt(string.length - 1) + reverse(string.substring(0, string.length - 1));
     /*return string at the character -1 so you can keep going down 
      then you have to call the reverse function with the new string  and use the new first character 
      and again go through the new function thats being created minus 1
     */
-  }
+  
 };
 
 // 10. Write a function that determines if a string is a palindrome.
@@ -119,17 +125,20 @@ var reverse = function(string) {
 var palindrome = function(string) {
   // base 
   if(string.length === 1){
-  // a =a its the same letter so it will repeat itself so you need at least one letter 
+  // a = a its the same letter so it will repeat itself so you need at least one letter 
   return true;
   }
-  if(string.length === 2){
-    return string[0] === string[1];
-  }
-  if(string[0] === string.slice(-1)){
-  return palindrome(string.slice(1,-1));
+  //if(string.length === 2){
+    //return string[0] === string[1];
+ // }
+  var noSpace = string.replace(/\s/g,"").toLowerCase();
+  if(noSpace[0] === noSpace.slice(-1)){
+  return palindrome(noSpace.slice(1,-1));
   } 
+
+
  // recrusion 
-return false;
+  return false;
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -144,14 +153,14 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
-if(x == 0 || y == 0){
+if(y === 0){
   return 0;
 }
-else if(x == 1){
-  return y;
+else if(y>0){
+  return (x+ multiply(x,y -1))
 }
-else {
-return multiply(x- 1, y) + y;
+else if(y< 0){
+  return -multiply(x,-y);
 }
 };
 
