@@ -38,7 +38,7 @@ var femaleCount = function(array){
             acc += 1;//acc= acc + 1;
         }
         return acc;
-    })
+    },0)
 };
 
 var oldestCustomer = function(array){
@@ -50,18 +50,26 @@ var oldestCustomer = function(array){
         return acc;
     }
     return acc;
-   },0);
+   },"");
 };
         
 var youngestCustomer = function(array){
-
+    return _.reduce(array, function (acc, current){
+        if(current.age > acc.age){
+            acc += current.name;
+        }
+        else{
+            return acc;
+        }
+        return acc;
+       },"");
 }
 var averageBalance = function(array){
      let total = _.reduce(array, function(acc, current){
         let currentNum =current.balence.replace(/[f,]/g,"")
         return acc = (currentNum);
      
-     })
+     },0)
      return total/array.length;
     }
 var firstLetterCount = function (array, letter){

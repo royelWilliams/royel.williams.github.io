@@ -3,15 +3,15 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
+function triangles(size) {
 // write a for loop that only goes to the 7th number of the #
-// counter="#";
-// for(let i =0; i < 7;i++){
-// console.log(counter);
-// counter+="#";
-// }
- for(var i = "#"; i.length <= 7; i += "#")
- console.log(i);
+
+let triangle = ''
+let counter = '#'
+ for(var i = 0; i < size; i++){
+  console.log(triangle += counter);
+ }
+ 
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -19,13 +19,13 @@ function triangles() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  for ( var num = 1; num <= 100; num++)
+  for ( var num = 1; num <= 15; num++)
   if (num % 3 == 0 && num % 5 == 0)
-    console.log("FizzBuzz");
+    console.log("fizzbuzz");
   else if (num % 3 == 0)
-    console.log("Fizz");
+    console.log("fizz");
   else if (num % 5 == 0)
-    console.log("Buzz");
+    console.log("buzz");
   else 
     console.log(num);
 }
@@ -36,34 +36,25 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+function drawChessboard(size) {
+  //this is the variable setting
 
-function drawChessboard() {
-  let size = 8;
-  let nextLetter = ' ';  // Represents topmost left square
-  let string = '';
-  
-  // Create a string of length (size^2 + size) characters depicting a chessboard pattern.
-  for (let n = 1; n <= (size * size); n++) {
-    string += nextLetter;
-  
-    // If a string has become `size` chars long, move to the new row;
-    // Otherwise, alternate between ' ' & '#' based on the current value of nextLetter.
-    if (n % size == 0) {
-      string += '\n';
-  
-          // Perform another alternation of the value of nextLetter if size is an odd number,
-          // to ensure that the new row starts with the letter opposite to the one in current row.
-          if (size % 2 == 1) {
-            nextLetter = (nextLetter == ' ')? '#': ' ';
-          }
-    }
-    else {
-      nextLetter = (nextLetter == ' ')? '#': ' ';
-    }
-  }
-  
-  console.log(string);
+var board = "";//this is the empty string we're going to add either ' ' , '#' or newline
+
+for (var y = 0; y < size; y++) {   /*in the outer loop we add newline to seperate rows*/
+ for (var x = 0; x < size; x++) {/*every inner loop rappresents a line, and alternatively it's adding either ' ' or '#' to the string that's being populated*/
+   if ((x + y) % 2 == 0)
+     board += " ";
+   else
+     board += "#";
+ }
+ board += "\n";
 }
+
+console.log(board);
+
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
