@@ -1,4 +1,4 @@
 /**
  * FUNCTIONS 
- * 
+ * A function is 
  */

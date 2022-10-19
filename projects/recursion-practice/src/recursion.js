@@ -61,15 +61,14 @@ var sumBelow = function(n) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y) {
-  if (y - x === 2) 
-  {
-    return [ x + 1];
-  } 
-  else 
-  {
-    var list = range(x, y - 1);
-    list.push(y - 1);
-    return list;
+  var arr = [];
+  if(x===y){
+    return arr;}
+    else if(x=== y - 1|| x===y+1){
+      return arr;
+    }
+  if(x<y){
+
   }
 };
 
@@ -92,17 +91,18 @@ var exponent = function(base, exp) {
 };
 
 // 8. Determine if a number is a power of two.
-// powerOfTwo(1); // true
-// powerOfTwo(16); // true
-// powerOfTwo(10); // false
+// powerOfTwo(1); // true 1*1 = 1
+// powerOfTwo(16); // true 4*4 = 16
+// powerOfTwo(10); // false nothing timex itself equals 10
 var powerOfTwo = function(n) {
   if(n === 1){
     return true;
- };
- if(n % 2 !== 0){
+ }
+ if(n < 1){
     return false;
  }
- return PowerOfTwo(n / 2);
+//recursion 
+return powerOfTwo(n/2);
 
 };
 
@@ -183,12 +183,20 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if(str1.length === 0 && str2.length === 0){
+    return true;
+    // if both the first characters are the same then use recurssive case
+  } else if(str1[0] === str2[0]) {
+    // keep slicing to compare the 0th index
+    return compareStr(str1.slice(1), str2.slice(1));
+  }
+  return false;
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str){
-  if(!str.length) return []; // return an empty array when the string is empty
+  if(str.length=== 0) return []; // return an empty array when the string is empty
   
   return [
     str[0], // take the current letter
@@ -197,17 +205,18 @@ var createArray = function(str){
 };
 
 // 17. Reverse the order of an array
-var reverseArr = function (array) {
-  var array= [];
-  function reverse(array){
-    if (array.length !== 0){
-      reverseArr.push(array.pop() );
-      reverseArr(array);
-    }
-  }
+var reverseArr = function(array) {
+  // go through each index of the array and then reverse them.
+  // put them in reverse order 
+//recrusion 
+if(arr.length === 0){
+  return [];}
+  // recrusion 
+   return arr.pop().concat(reverseArr(array));
 
-  reverser(toBeReversed);
-  return reversed;
+
+//Call the function recursively with one element less and so on.
+return [arr.pop()].concat(reverseArr(array));
 };
 
 // 18. Create a new array with a given value and length.
