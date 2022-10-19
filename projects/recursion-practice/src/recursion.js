@@ -5,10 +5,10 @@
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
 var factorial = function(n) {
-if(n === 0){
-  return;
-   return factorial(n-1)
-}
+  if (n < 0) return null;
+  if (n === 0) return 1;
+  if (n === 1) return 1;
+  return n * factorial(n-1);
 };
 
 // 2. Compute the sum of an array of integers.
@@ -214,14 +214,10 @@ var reverseArr = function(array) {
   // go through each index of the array and then reverse them.
   // put them in reverse order 
 //recrusion 
-if(arr.length === 0){
-  return [];}
-  // recrusion 
-   return arr.pop().concat(reverseArr(array));
-
-
-//Call the function recursively with one element less and so on.
-return [arr.pop()].concat(reverseArr(array));
+if (array.length === 1) return [array[0]];
+  var list = reverseArr(array.slice(1, array.length));
+  list.push(array[0]);
+  return list
 };
 
 // 18. Create a new array with a given value and length.
@@ -287,9 +283,10 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
-  if (n <= 1) return n ;
-if (n < -1) return null;
-  return nthFibo(n- 1) + nthFibo(n - 2);
+  if (n < 0) return null;
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return nthFibo(n-1) + nthFibo(n-2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
@@ -352,15 +349,15 @@ var flatten = function(arrays) {
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
-  // if (str.length === 0) return obj;
-  // letterTally(str.substring(1), obj);
-  // if (obj[str[0]] === undefined) {
-  //   obj[str[0]] = 1;
-  // } else {
-  //   obj[str[0]] += 1;
-  // }
-  // return obj;
-};
+  if (str.length === 0) return obj;
+  letterTally(str.substring(1), obj);
+  if (obj[str[0]] === undefined) {
+    obj[str[0]] = 1;
+  } else {
+    obj[str[0]] += 1;
+  }
+  return obj;
+};  
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
@@ -380,12 +377,21 @@ var compress = function(list) {
 // itself.
 // Example: augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 var augmentElements = function(array, aug) {
+
 };
 
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
 var minimizeZeroes = function(array) {
+  // make sure you iterate through all of the 0's until you go to zero 
+  // when you reach 0 you might want to include it so use -1 also 
+  if (array.length === 0) return [];
+  var list = minimizeZeroes(array.slice(1));
+  if ((array[0] === 0 ^ list[0] === 0) || array[0] !== 0) {
+    list.unshift(array[0]);
+  }
+  return list;
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
@@ -393,12 +399,52 @@ var minimizeZeroes = function(array) {
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array) {
+  if (array.length === 0) return [];
+  var list = alternateSign(array.slice(0, array.length-1));
+  var lng = array.length;
+  if (lng%2 === 0) {
+    if (array[lng-1] > 0) {
+      array[lng-1] = -array[lng-1];
+    }
+  } else {
+    if (array[lng-1] < 0) {
+      array[lng-1] = -array[lng-1];
+    }
+  }
+  list.push(array[lng-1]);
+  return list;
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
+  if (str.length === 0) return '';
+  var tempStr = numToText(str.substring(0, str.length-1));
+  var replace;
+  switch (str[str.length-1]) {
+    case '1': replace = 'one';
+      break;
+    case '2': replace = 'two';
+      break;
+    case '3': replace = 'three';
+      break;
+    case '4': replace = 'four';
+      break;
+    case '5': replace = 'five';
+      break;
+    case '6': replace = 'six';
+      break;
+    case '7': replace = 'seven';
+      break;
+    case '8': replace = 'eight';
+      break;
+    case '9': replace = 'nine';
+      break;
+    default: replace = str[str.length-1];
+      break;
+  }
+  return tempStr + replace;
 };
 
 // *** EXTRA CREDIT ***
