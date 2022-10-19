@@ -64,12 +64,17 @@ var range = function(x, y) {
   var arr = [];
   if(x===y){
     return arr;}
-    else if(x=== y - 1|| x===y+1){
+    else if(x=== y - 1|| x===y + 1){
       return arr;
     }
-  if(x<y){
-
+  if(x > y){
+var tempNum =x -1;
   }
+if(x<y){
+  var tempNum = x+1;
+}
+arr.push(tempNum);
+return arr.concat(range(tempNum,y));
 };
 
 // 7. Compute the exponent of a number.
@@ -282,17 +287,49 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
+  if (n <= 1) return n ;
+if (n < -1) return null;
+  return nthFibo(n- 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
 var capitalizeWords = function(input) {
+  if (input.length === 1) {
+    return [input[0].toUpperCase()]
+  }
+  let res = capitalizeWords(input.slice(0, -1))
+  res.push(input.slice(input.length - 1)[0].toUpperCase())
+  return res
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function(array) {
+var capitalizeFirst = function(array,index =0) {
+  if (!array.length) return 'Empty array';
+
+  // If we're at the end of the array
+  // return the array
+  if (index === array.length) return array;
+  
+  // If the element is not empty
+  if (array[index].length) {
+  
+    // Get the first letter, and place all
+    // the other letters in an array called `rest`
+    // You can use destructuring here because strings
+    // are iterable
+    const [first, ...rest] = array[index];
+
+    // Update the element at the current index
+    // with the new string making sure you join up `rest`
+    array[index] = `${first.toUpperCase()}${rest.join('')}`;
+  
+  }
+
+  // Call the function again increasing the index
+  return capitalizeFirst(array, ++index);
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -315,6 +352,14 @@ var flatten = function(arrays) {
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
+  if (str.length === 0) return obj;
+  letterTally(str.substring(1), obj);
+  if (obj[str[0]] === undefined) {
+    obj[str[0]] = 1;
+  } else {
+    obj[str[0]] += 1;
+  }
+  return obj;
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
@@ -361,6 +406,15 @@ var tagCount = function(tag, node) {
 // console.log(binarySearch(5)) will return '5'
 
 var binarySearch = function(array, target, min, max) {
+  if(target > min) return -1;
+    let mid = Math.floor((target + min) / 2);
+
+    if(array[mid] === max) return mid;
+    if(max > array[mid]) {
+        return binarySearch(array, mid + 1, min, max);
+    } else if(max < arr[mid]) {
+        return binarySearch(array, target, mid -1,max);
+    }
 };
 
 // 38. Write a merge sort function.
