@@ -43,10 +43,12 @@ Number Data type is for numbers of any kind: integer or floating-point, integers
 The Number type has only one value with multiple representations: 0 is represented as both -0 and +0 
 (where 0 is an alias() for +0). 
 5. BigInt Data Type.
-BigInt data type is for integer numbers of arbitrary length. With BigInt s, you can safely store and operate on large integers even beyond the safe integer limit for number s.
-
+BigInt data type is for integer numbers of arbitrary length. With BigInt s, you can safely store and
+ operate on large integers even beyond the safe integer limit for number s.
+(Im sure we will learn more and in depth about this later )
 6. String Data Type.
-String Data type is used to represent textual data. It is a set of "elements" of 16-bit unsigned integer values.
+String Data type is used to represent textual data. It is a set of "elements" of 16-bit unsigned 
+integer values.
 
 7. Symbol Data Type.
 The symbol data type is used for giving unique identifiers.
