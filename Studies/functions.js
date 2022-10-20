@@ -35,4 +35,17 @@
  * the 2 and the 4 are the test that will be ran after the function was called
  * Keep in mind that functions can be called at a later point if nessary and reassigned 
  * different input values to test the function and get different results.
- */ 
+ * 
+ * When dealing with functions there a few things you want to really pay attention to, like first the difference 
+ * in a parameter and a function call
+ * Remember a parameter is used as place holders that will go through the function and tell it where the values will
+ * be placed and what will be the result of  it. they can be described as the prep for any given function 
+ * 
+ * An argurment on the othe hand is the real deal an argurment will be placed in the parenthesis of the function call 
+ * at the end of the function and the values that are placed will then replace the parameter values and go through the function
+ * to return another form of value 
+ * 
+ *Scope 
+ scope  
+ * 
+ */
