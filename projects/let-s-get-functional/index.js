@@ -73,8 +73,9 @@ var averageBalance = function(array){
      return total/array.length;
     }
 var firstLetterCount = function (array, letter){
-    var upper = array.toUpperCase(letter)
-    
+     return _.reduce(function(array, letter){
+
+    }, '');
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
