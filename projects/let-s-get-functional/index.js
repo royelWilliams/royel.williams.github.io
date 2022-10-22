@@ -46,9 +46,6 @@ var oldestCustomer = function(array){
     if(current.age > acc.age){
         acc += current.name;
     }
-    else{
-        return acc;
-    }
     return acc;
    },"");
 };
@@ -59,7 +56,7 @@ var youngestCustomer = function(array){
             acc += current.name;
         }
         else{
-            return acc;
+        
         }
         return acc;
        },"");
@@ -74,8 +71,10 @@ var averageBalance = function(array){
     }
 var firstLetterCount = function (array, letter){
      return _.reduce(function(array, letter){
-
-    }, '');
+if(array.name[0] === array.name[0]){
+    return letter;
+}
+    }, 0);
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
