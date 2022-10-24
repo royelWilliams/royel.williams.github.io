@@ -45,7 +45,5 @@
  * at the end of the function and the values that are placed will then replace the parameter values and go through the function
  * to return another form of value 
  * 
- *Scope 
- scope  
  * 
  */

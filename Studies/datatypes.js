@@ -1,11 +1,11 @@
 /**
- * DataTypes 
+ *  DataTypes 
  * data types can be defined as a classification that specifies which type of value a variable 
  * One of the things that you really want to know when it comes to data types is the difference in primative and 
  * complex data types, with this understanding i think everything will be able to be a little easier to understand 
  * First the 
- *1. Boolean Data Types.
-Boolean is a primitive data type in javascript. Boolean data types consist of logical They consist 
+ *  Boolean Data Types.
+*Boolean is a primitive data type in javascript. Boolean data types consist of logical They consist 
 of two possible values “true” or “false”.
 this is generally used when comparing two ideas or things they can also be know when you want to find yes and no values 
 although the use of booleans seems really simple they are constantly used when coding in Javascript 
@@ -49,4 +49,6 @@ The Number type has only one value with multiple representations: 0 is represent
 String Data type is used to represent textual data. It is a set of "elements" of 16-bit unsigned 
 integer values.
   
+3. String 
+The String object is used to represent and manipulate a sequence of characters
  */

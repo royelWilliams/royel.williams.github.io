@@ -10,7 +10,7 @@
 3) exit bashrc file
 4)kill terminal
 5)reopen new terminal 
-6)in terminal type => sudo apt-get install subversion
+6)in terminal type => export CHE_PROJECTS_ROOT=/workspace
 7) in terminal, type => npm install -g opspark
 8) in terminal, type => os install
 9) select bootcamp session 
