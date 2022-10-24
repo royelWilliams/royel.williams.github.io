@@ -78,6 +78,11 @@ if(array.name[0] === array.name[0]){
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
+    return _.reduce( function(array,customer,letter)
+     
+    ), []{
+
+    }
 }
 
 var friendsCount;
