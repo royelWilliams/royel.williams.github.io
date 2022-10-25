@@ -1,29 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-function range(start, end, step) {
-  // If no optional step, set step to 1.
-  if (step == null) step = 1;
-
-  // Initialize the array that will eventually be returned.
-  var array = [];
-
-  // If the range is increasing, continue pushing i to the    
-  // array and incrementing i by step until i is greater than 
-  // end, then stop.
-  if (step > 0) {
-    for (var i = start; i <= end; i += step)
-      array.push(i);
-  // If the range is decreasing, continue pushing i to the 
-  // array until i is less than end, then stop.
-  // Remember i will get smaller because step is negative.
-  } else {
-    for (var i = start; i >= end; i += step)
-      array.push(i);
+function range(start,end, step = start < end ? 1 : -1) {
+  // have the params of start and end
+  // need a storage array
+  let rangeArray = [];
+  // need to loop through start and end 
+    // for the edge case that start equals end
+       if(start !== end && step > 0){
+         for(let i = start; i <= end; i += step ){
+         //push the numbers into array
+           rangeArray.push(i);
+   }
+   // for the edge case that start equals end return empty array
+  } else if(start === end){
+      return rangeArray;
+  } 
+   else{
+      // for the edge case of a negative step
+    for(let i = start; i >= end; i += step ){
+      rangeArray.push(i);
   }
-  // Return the result
-  return array;
-}
+  } return rangeArray;
+  }
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
