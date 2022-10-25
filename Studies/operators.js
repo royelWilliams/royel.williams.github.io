@@ -34,8 +34,16 @@
  * (||)- or:for a set of operands is true if and only if one or more of its operands is true.
  * (!)-not:the not operator is used when something is not true 
  * UNARY OPERATORS:
- * ()
- * ()
- * ()
- * ()
+ * (+)-plus: tries to turn a number to a positive 
+ * (++)-incriment:	Adds one to its operand
+ * (-)-minus: tried to turn a number to a negative 
+ * (--)-decriment:Decrements by one from its operand
+ * (!)-not:Converts to boolean value then negates it(this can change any value/ statement from false to true or vice versa)
+ * (typeof)-type of: Returns a string which is the type of the operand(this works with all simple data types it gets more complicated with objects, arrays, etc)
+ * (delete)-delete:Deletesspecific index of an array or specific property of an object
+ * TERNARY OPERATORS:
+ * this is often  only JavaScript operator that takes three operands: a condition followed by a question mark (?),
+ *  then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
+ * (a(being the expression or thing that needs to be solved)? b(being true):c(being false))
+ * (a?b:c
  */
