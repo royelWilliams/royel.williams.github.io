@@ -5,6 +5,7 @@
 var customers = require('./data/customers.json');
 var _ = require('underbar');
 
+
 /**
  * 1. Import your lodown module using the require() method,
  *    using the string 'lodown-<my-username>', or whatever
@@ -16,7 +17,7 @@ var _ = require('underbar');
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./royel.williams.github.io/projects/let-s-get-functional
+ *    npm start --prefix ./projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
@@ -43,11 +44,14 @@ var femaleCount = function(array){
 
 var oldestCustomer = function(array){
    return _.reduce(array, function (acc, current){
+  var prop = acc[0];
     if(current.age > acc.age){
-        acc += current.name;
+        (prop,current)
+        
+
     }
     return acc;
-   },"");
+   });
 };
         
 var youngestCustomer = function(array){
@@ -78,11 +82,9 @@ if(array.name[0] === array.name[0]){
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
-    return _.reduce( function(array,customer,letter)
+    return _.reduce( function(array,customer,letter){}
      
-    ), []{
-
-    }
+    )
 }
 
 var friendsCount;
