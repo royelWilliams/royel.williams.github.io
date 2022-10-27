@@ -111,16 +111,63 @@ var friendFirstLetterCount = function(array,customer,letter){
     }
 
 
-var friendsCount = function(){
+var friendsCount = function(array,name){
+// look at the customers who have other customers as their friends 
+var fcustomers = [];
+//go through the customers array 
+//for(let i= 0; i <array.length; i++){
+//match a name to a name thats being put in 
+//if(friends[i].name === name){
+//fcustomers = array[i];
 
+ let custom = _.reduce(array, function(acc,element){
+    //trying the customers names 
+    for(let i= 0; i < element.friends.length; i++){
+        //match a name to a name thats being put in 
+        if(element.friends[i].name === name){
+            acc = element.name;
+           fcustomers.push(acc);
+        }
+    }
+ });
+ return fcustomers;
 }
 
-var topThreeTags= function(){
-
+var topThreeTags= function(array){
+//find the three most common tags among all customers 
+var commonTags=[];
+//go through the array to get all of the tags 
+// for(var i = 0; i < array.length; i ++){
+//     if(friends.array[i].tags=== tags)
+//     commonTags = array[i];
+// }
+return_.reduce(array,function(acc,current){
+    for(var i = 0; i < current.length; i ++){
+        if(current.tags === tags)
+        commonTags = array[i];
+    if(current.tags=== tags ){
+    
+    }
 }
+});
 
-var genderCount=function(){
-   
+
+var genderCount=function(array){
+   //count the number of each geneder and store it into an object 
+   // create somewhere for the genders to go when this is all over 
+
+ let genders = {};
+ //use redcuce to compare genders and tally them 
+return _. reduce(array,function(acc,currentC){
+    for(var i = 0; i < array.length; i++){
+        if(currentC === array.gender){
+        acc += acc+ 1;
+    }
+    return acc;
+}
+});
+ // be able to loop through the original array   
+  //use redcuce to compare genders and tally them 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -137,4 +184,4 @@ module.exports.firstLetterCount = firstLetterCount;
 module.exports.friendFirstLetterCount = friendFirstLetterCount;
 module.exports.friendsCount = friendsCount;
 module.exports.topThreeTags = topThreeTags;
-module.exports.genderCount = genderCount;
+module.exports.genderCount = genderCount;}
