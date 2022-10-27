@@ -66,31 +66,62 @@ var youngestCustomer = function(array){
 }
 var averageBalance = function(array){
      let total = _.reduce(array, function(acc, current){
-        let currentNum =current.balence.replace(/[f,]/g,"")
-        return acc = (currentNum);
-     
-     },0)
-     return total/array.length;
+        let bal = parseInt(current.balance.replace(/[^\w\s]/gi, ""),10);
+         acc += bal; 
+         return acc;
+     },0);
+     let mark = (total/(array.length*100));
+     return mark;
     }
-var firstLetterCount = function (array, letter){
-     return _.reduce(function(array, letter){
-if(array.name[0] === array.name[0]){
-    return letter;
+
+
+    
+var firstLetterCount = function(array, letter){
+     return _.reduce(array,function(acc, curr){
+if(curr.name[0].toLowerCase() === letter.toLowerCase()){
+    acc = acc + 1;
 }
+ return acc;
+
+
     }, 0);
 }
 
 var friendFirstLetterCount = function(array,customer,letter){
-    return _.reduce( function(array,customer,letter){}
-     
-    )
+       //store the friends in a room who meet the criteria(object)
+       var customerFriends= {};
+       // loop through the customers to get their friends 
+       for(let i = 0;i < array.length; i++){
+        //if name matches name 
+        // current customer matches customer in parameter
+        if(array[i].name === customer)
+     customerFriends = array[i];
+       }
+       return _.reduce(customerFriends.friends,function(acc, curr){
+        if(curr.name[0].toLowerCase() === letter.toLowerCase()){
+            acc = acc + 1;
+        }
+         return acc;
+        
+        
+            }, 0);
+        //}
+       // if customer friends(first letter) meet requirements(letter passed in) add them to object
+       //reduce 
+    }
+
+
+var friendsCount = function(){
+
 }
 
-var friendsCount;
+var topThreeTags= function(){
 
-var topThreeTags;
+}
 
-var genderCount;
+var genderCount=function(){
+   
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
