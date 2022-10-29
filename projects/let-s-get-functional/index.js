@@ -133,42 +133,89 @@ var fcustomers = [];
  return fcustomers;
 }
 
-var topThreeTags= function(array){
-//find the three most common tags among all customers 
-var commonTags=[];
-//go through the array to get all of the tags 
-// for(var i = 0; i < array.length; i ++){
-//     if(friends.array[i].tags=== tags)
-//     commonTags = array[i];
-// }
-return_.reduce(array,function(acc,current){
-    for(var i = 0; i < current.length; i ++){
-        if(current.tags === tags)
-        commonTags = array[i];
-    if(current.tags=== tags ){
-    
-    }
-}
+var topThreeTags = function(array){
+    // create an array to hold all tags in
+     let arrTags = []
+// use reduce to reduuce down our tags into one array
+
+let newTags =  _.reduce(array,function(prev,curr,i){
+   // create a condition for the case of us having a tags array
+     if(curr.tags !== undefined){
+         // push the tags into an array so it can be an array of array tags
+         arrTags.push(curr.tags)
+         // flatten the nested arrays
+     }
+     // concat the tags into one big array of tags
+      return  [].concat(...arrTags);
+});
+
+// use reduce to 
+
+let tags = _.reduce(newTags,function(prev,curr){
+          console.log(prev);
+          // we want to check the conditions that the tag exist if it doesnt we'll set it equal to one
+          // if it does exist we want to create the key in our object and increment by 1 eveytime we hit the tag
+          if(prev[curr] === undefined){
+              prev[curr] = 1;
+          } else {
+              prev[curr] += 1;
+          } return prev;
+},{});
+
+
+// create a newArray and iterate over our tags object to make our object an array by pushing it
+var newArray = [];
+_.each(tags,function(count,word){
+   newArray.push([word,count]);
+});
+
+// sort our array from highest to lowest by using b - a
+newArray.sort(function(a,b){
+  return b[1] - a[1];
 });
 
 
-var genderCount=function(array){
-   //count the number of each geneder and store it into an object 
-   // create somewhere for the genders to go when this is all over 
+// console.log(newArray);
+// create a new array to push the sorted array into that array
+var sortedArray = [];
+// loop through array to keep the first three elements
+for(var i = 0; i < 3; i++){
+    sortedArray.push(newArray[i][0]);
+    // return our new array with the top three tags
+} return sortedArray;
 
- let genders = {};
- //use redcuce to compare genders and tally them 
-return _. reduce(array,function(acc,currentC){
-    for(var i = 0; i < array.length; i++){
-        if(currentC === array.gender){
-        acc += acc+ 1;
-    }
-    return acc;
-}
-});
- // be able to loop through the original array   
-  //use redcuce to compare genders and tally them 
-}
+};
+
+
+
+
+
+var genderCount = function(array){
+  
+    // need a key of female with 
+    // need a key of male
+    // need a key of non-binary
+      let male = 0;
+   let female = 0;
+   let nonBinary = 0;
+   // use reduce to return a summary of genderCount
+   return  _.reduce(array, function(prev, curr, i){
+       // checking our condition that we have the genders and to add to our counter variable if we do
+       if (curr.gender === "male"){
+           male += 1;
+       } else if (curr.gender === "female"){
+           female += 1;
+       } else{
+           nonBinary += 1;
+       }
+       // returning our final object with the keys which will tack on our final counter values
+       return {
+           male,
+           female,
+           "non-binary": nonBinary
+       };
+   }, 0);
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
@@ -184,4 +231,4 @@ module.exports.firstLetterCount = firstLetterCount;
 module.exports.friendFirstLetterCount = friendFirstLetterCount;
 module.exports.friendsCount = friendsCount;
 module.exports.topThreeTags = topThreeTags;
-module.exports.genderCount = genderCount;}
+module.exports.genderCount = genderCount;
