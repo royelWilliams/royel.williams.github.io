@@ -11,10 +11,11 @@
 4)kill terminal
 5)reopen new terminal 
 6)in terminal type => export CHE_PROJECTS_ROOT=/workspace
-7) in terminal, type => npm install -g opspark
-8) in terminal, type => os install
-9) select bootcamp session 
-10)select project 
+7 in terminal type => sudo apt-get install subversion
+8) in terminal, type => npm install -g opspark
+9) in terminal, type => os install
+10) select bootcamp session 
+11)select project 
 ## In terminal how to run os tes
 1) in terminal,type os {action}
 2) select bootcamp session 

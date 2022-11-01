@@ -133,6 +133,7 @@ var fcustomers = [];
  return fcustomers;
 }
 
+
 var topThreeTags = function(array){
     // create an array to hold all tags in
      let arrTags = []
@@ -185,6 +186,7 @@ for(var i = 0; i < 3; i++){
 } return sortedArray;
 
 };
+
 
 
 

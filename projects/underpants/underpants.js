@@ -224,7 +224,7 @@ _.each = function(collection, func){
         }
         //else its a object 
     } else {
-        //iterate through a loop 
+        //iterate through a  for in loop 
         for(let key in collection){
             func(collection[key], key, collection);
         }
