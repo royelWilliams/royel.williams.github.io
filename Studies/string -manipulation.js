@@ -13,18 +13,33 @@
  * strings can also be manipulated through various methods when using Javascript 
  * this includes:
  * concat(),- joins more than one string together without damaging or changing the original string 
+ * example: 
  *indexOf(), -It returns only the first occurrence of a word in a string
+ * example:
  *lastIndexOf(), -method gives the index of the last occurrence of the specified word in the given string
+  * example
  *charAt(), - finds a character in a specific place in a string 
+  * example:
  *match(), -This method searches the string to match expressions and returns the result as an Array  Object.
+  * example:
  *replace(),- It searches the string for a specific value and then replaces it with the given value 
+  * example:
  *split(), -It splits the string into an array of substrings and returns the new array.
+  * example:
  *splice(),- It simply cuts a specific part of the given string and returns the isolated part. It takes either one or two parameters,
+  * example:
  *length(), -returns the length of a given string (string length of a empty string is 0)
+  * example:
  *substring(),-It takes two parameters, start and end, and returns the characters in these indexes  excluding the end character. 
+  * example:
  *search(),- It searches a word in the string and returns its index. It returns -1 when no match is  found
+  * example:
  *toUpperCase(),- uppercases the letters in a string 
+  * example:
  *toLowerCase(),- lowercases the letters in a string 
+  * example:
  *trim()-This method is used to remove all the whitespace characters (space, tab etc) from both sides of the string
- * There are many methods that you can use on a string but these are some of the more commom methods that one would use to get through a code  
+  * example:
+ * There are many methods that you can use on a string but these are some of the more commom methods that one would use to get through a code 
+ *  * example: 
  */
