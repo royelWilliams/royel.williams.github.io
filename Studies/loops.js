@@ -68,13 +68,14 @@
 
  * And the last of the three a while loop
  * a while loop is used when you are usually Use a while loop for reading a file into a variable.
- * Use a while loop when asking for user input.
+ * Use a while loop when asking for user input.They will alo continue exiting the block of code as long as the code is true 
  * Use a while loop when the increment value is nonstandard.
  * and i am sure tehre are many more ways taht you van utilize a while loop 
  * The basic thing to remember when dealing with a while loop is that the The while loop loops through a block of code as long as a 
  * specified condition is true.
  * sooooo...
  * while(x<145){
+ * count ++ // make sure to incriment x so the the loop will eventually stop 
  * }
  * results to the loop going on and on until whatever the number x is happens to be greater than the number 145
  */
