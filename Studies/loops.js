@@ -8,17 +8,46 @@
  * this will be the  declare a counter variable. This variable that we keeps track of how many times our 
  * loop has been executed.
  * this will also tell us where to start with our loop so then it will look like this 
- * for(var i = 0;)
+ * for(var i = 0;) ** this tells your loop where you want to start 0 being the oth index of the array or the first spot on the object
  * next you want to tell the loop some basic information is is <,>, <=,>= and what is the stopping point 
  * this will help the loop to run smoothly i sudgest using the < or <= or the loop will crash 
  * so now your loop looks like this 
- * for(var i = 0 ; i <= 12;)
+ * for(var i = 0 ; i <= 12;) ** this tells us where to stop when you have the condition met. the loop will stop when the resultis false
  * the last thing you want to do with your loop is to tell it if it will incriment up or down
  * so...
- * for(var i = 0 ; i <= 12;i++)=> going up
+ * for(var i = 0 ; i <= 12;i++)=> going up 
  * for(var i = 0 ; i <= 12;i--)=> going down 
- *  
+ *  ** incrimenting through the loop lets you know if you are going up or down the ++ signifies that the numbers that are being passed through will get larger and closer to infinity
+ * the -- signify that the numbers will contnue to get lower to negative infinity => but this is not possible because we have a place for the loop to actually stop 
  * that would be the basics 
+ * the major thing that you want to remember when dealing with a for in loop is the stop start and incrment 
+ * ITTERATING FORWARD && BACKWARD
+ * var fruits = ["apple","banana","cherry"];
+ * var direction = 1;
+ *
+ * function iterate(arr, direction, callback){
+ *  if(direction === 1){
+ *       console.log("Forwards");
+ *      for(var i = 0; i < arr.length; i++){
+ *           //Iterate through array regularly
+ *          if(callback !== undefined){
+ *               callback(arr[i]);
+ *           }
+ *       }
+ *   }
+ *   else{
+ *      console.log("Backwards");
+ *       for(var i = arr.length - 1; i >= 0; i--){
+ *          //Iterate through array backwards
+ *           if(callback !== undefined){
+ *              callback(arr[i]);
+ *          }
+ *      }
+ *   }
+ * }
+ *
+ * 
+ * 
  * now a for in loop is used when you want to loop through a object 
  * they are extremely helpful, however they are quite different from a normal for loop.
  * a for in loop has various parts, there is the loop, and then after the loop we are provided ways to find things within the loop from
@@ -34,6 +63,9 @@
  * c:"carmen"};
  * for(var key in capitals){
  * }
+ * 
+ * 
+
  * And the last of the three a while loop
  * a while loop is used when you are usually Use a while loop for reading a file into a variable.
  * Use a while loop when asking for user input.
